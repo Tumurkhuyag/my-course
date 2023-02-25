@@ -1,4 +1,5 @@
 var birthYear = [1981, 2005, 2014, 1950, 1978, 1986, 2011, 1948, 1961, 2010];
+var ages = processArr(birthYear, findAge);
 
 function processArr(myArr, fn) {
   var arr = [];
@@ -23,8 +24,6 @@ function maxHeartBeat(el) {
 function isRetired(el) {
   return 60 <= el;
 }
-
-var ages = processArr(birthYear, findAge);
 
 console.log(ages);
 console.log(processArr(ages, isAdult));
