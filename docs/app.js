@@ -5,16 +5,16 @@ var str = "";
 for (let index = 1; index <= lessonDone; index++) {
   if (index < 10) {
     str +=
-      "<li><a href='/Lesson 0" +
+      "<li><a href='/0" +
       index +
-      "/index.html'>Lesson 0" +
+      "-lesson/index.html'>Lesson 0" +
       index +
       "</a></li>";
   } else {
     str +=
-      "<li><a href='/Lesson " +
+      "<li><a href='/" +
       index +
-      "/index.html'>Lesson " +
+      "-lesson/index.html'>Lesson " +
       index +
       "</a></li>";
   }
