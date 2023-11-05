@@ -2,7 +2,7 @@ var lessonDone = 61;
 
 var str = "";
 
-for (let index = 6; index <= lessonDone; index++) {
+for (let index = 1; index <= lessonDone; index++) {
   if (index < 10) {
     str +=
       "<li><a href='/Lesson 0" +

@@ -1,0 +1,29 @@
+{
+    "explorer.openEditors.visible": 0,
+    "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+    // "workbench.activityBar.visible": false,
+    "editor.lineHeight": 30,
+    "editor.fontWeight": "normal",
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#333",
+        "statusBar.debuggingBackground": "#263238",
+        "statusBar.noFolderBackground": "#333"
+    },
+    "editor.fontSize": 16,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "css.validate": false,
+    "editor.wordWrap": "on",
+    "explorer.sortOrder": "type",
+    "editor.cursorBlinking": "smooth",
+    "git.ignoreMissingGitWarning": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.wordWrapColumn": 250,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    // "files.trimFinalNewlines": true
+    // "editor.fontLigatures": true,
+}
+/* Extensions 
+*/

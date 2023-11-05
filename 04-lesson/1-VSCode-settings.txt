@@ -1,0 +1,23 @@
+"editor.fontSize": 18,
+"editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+"editor.wordWrap": "on",
+"editor.lineHeight": 30,
+"editor.cursorBlinking": "smooth",
+"explorer.openEditors.visible": 0,
+
+"workbench.colorCustomizations": {
+"statusBar.background": "#333",
+"statusBar.debuggingBackground": "#263238",
+"statusBar.noFolderBackground": "#333"
+},
+
+"editor.minimap.enabled": false,
+"workbench.activityBar.visible": false
+
+"explorer.sortOrder": "type",   
+"files.trimFinalNewlines": true
+"editor.renderIndentGuides": false
+"workbench.editor.highlightModifiedTabs": true
+
+"files.autoSave": "onFocusChange"
+"editor.formatOnSave": true,

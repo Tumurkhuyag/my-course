@@ -1,0 +1,10 @@
+auto rename tag ( Jun Han ) 
+prettier ( Esben Petersen ) 
+Bracket Pair Colorizer	(CoenraadS)
+paste-and-indent  (q3rry) 
+Path Intellisense (Christian Kohler) 
+Javascript ES6 Code snippets (Charalampos karypidis) 
+Visual Studio Intellicode 
+Indent Rainbow 
+Import Cost 
+Live Server (Ritwick Dey)
