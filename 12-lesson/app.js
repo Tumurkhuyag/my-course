@@ -11,19 +11,19 @@ var job = "Designer";
 //   console.log(name + " дээрх гурваас өөр ажил хийдэг");
 // }
 
-// switch (job) {
-//   case "Instructor":
-//     console.log(name + " бол дизайны багш!");
-//     break;
-//   case "Designer":
-//     console.log(name + " бол дижитал дизайнер!");
-//     break;
-//   case "Coder":
-//     console.log(name + " бол веб болон мобайл хөгжүүлэгч!");
-//     break;
-//   default:
-//     console.log(name + " дээрх гурваас өөр ажил хийдэг!");
-// }
+switch (job) {
+  case "Instructor":
+    console.log(name + " бол дизайны багш!");
+    break;
+  case "Designer":
+    console.log(name + " бол дижитал дизайнер!");
+    break;
+  case "Coder":
+    console.log(name + " бол веб болон мобайл хөгжүүлэгч!");
+    break;
+  default:
+    console.log(name + " дээрх гурваас өөр ажил хийдэг!");
+}
 
 var avgScore = 80;
 
