@@ -1,6 +1,6 @@
 var a = 12;
 var b = true;
-var c = 'boldoo';
+var c = "boldoo";
 
 // console.log(a+b+c);
 
@@ -17,4 +17,6 @@ var c = 'boldoo';
 // console.log(a);
 
 var result = 4 > 2 > 1;
+// var result = true > 1;
+
 console.log("Үр дүн : " + result);
