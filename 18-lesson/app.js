@@ -9,6 +9,7 @@ proLang.unshift("assembler");
 console.log(proLang.shift());
 
 proLang.push("php");
+console.log(proLang);
 
 console.log("Хамгийн сүүлд байрлаж буй хэл: " + proLang[proLang.length - 1]);
 console.log(
@@ -18,7 +19,12 @@ console.log(
 console.log("Хоёрт байрлаж буй хэл: " + proLang[1]);
 console.log(proLang.length + " төрлийн хэл байна");
 
-console.log(proLang.indexOf("python"));
+console.log(proLang);
+console.log(
+  "Python хэл proLang[" +
+    proLang.indexOf("python") +
+    "] дугаартай өгөгдөл дотор байрлаж байна"
+);
 
 console.log(proLang);
 
