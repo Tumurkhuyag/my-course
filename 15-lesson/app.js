@@ -24,10 +24,6 @@ var sumOfMods = function (x, y, z) {
 console.log(sumOfMods(8, -10, 20));
 
 // Statement function бичиглэл
-// function mod(number) {
-//  console.log("Statement function ажиллалаа! Орж ирсэн утга: " + number);}
-// mod(12);
-
 function moduleStatement(number) {
   var mod;
   if (number < 0) mod = -number;
@@ -37,3 +33,7 @@ function moduleStatement(number) {
 }
 
 console.log(moduleStatement(-200) + moduleStatement(20));
+
+// function mod(number) {
+//  console.log("Statement function ажиллалаа! Орж ирсэн утга: " + number);}
+// mod(12);
