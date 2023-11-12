@@ -4,7 +4,7 @@
 // Жишээ нь |-13| = 13,  |25| = 25
 
 // Expression function бичиглэл
-var module = function (number) {
+var moduleExpression = function (number) {
   var mod;
   if (number < 0) mod = -number;
   else mod = number;
@@ -18,7 +18,7 @@ var module = function (number) {
 // |x| + |y| + |z|
 
 var sumOfMods = function (x, y, z) {
-  return module(x) + module(y) + module(z);
+  return moduleExpression(x) + moduleExpression(y) + moduleExpression(z);
 };
 
 console.log(sumOfMods(8, -10, 20));
@@ -27,3 +27,13 @@ console.log(sumOfMods(8, -10, 20));
 // function mod(number) {
 //  console.log("Statement function ажиллалаа! Орж ирсэн утга: " + number);}
 // mod(12);
+
+function moduleStatement(number) {
+  var mod;
+  if (number < 0) mod = -number;
+  else mod = number;
+
+  return mod;
+}
+
+console.log(moduleStatement(-200) + moduleStatement(20));
