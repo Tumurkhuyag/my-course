@@ -19,19 +19,21 @@ function findOddNum() {
   var input = prompt("Танд хэд хүртэлх сондгой тоонуудыг харуулах вэ?");
 
   var oddNumList = [];
-  for (var i = 1; i <= input; i = i + 2) {
-    oddNumList[i - 1] = i;
+  var evenNumList = [];
+  for (var i = 1; i <= input; i = i + 1) {
+    i % 2 === 1 ? oddNumList.push(i) : evenNumList.push(i);
   }
 
   if (input >= 1) {
     myFunction();
     function myFunction() {
-      var result = "";
+      var result = "<p> " + input + " хүртэлх сондгой тоонууд</p>";
       oddNumList.forEach(function (listItem) {
-        result += "<li>" + listItem;
+        result += "<li>" + listItem + "</li>";
       });
 
       document.getElementById("demo").innerHTML = result;
+      console.log("Even numbers " + evenNumList);
     }
   } else {
     alert("Уучлаарай! Та нэгээс их тоон утга оруулна уу!");
