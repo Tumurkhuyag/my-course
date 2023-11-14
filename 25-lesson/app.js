@@ -11,3 +11,6 @@ try {
     console.log(error.message);
   }
 }
+
+try {
+} catch (error) {}

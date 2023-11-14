@@ -6,11 +6,11 @@ console.log(typeof y);
 
 var b = true;
 var c = {};
+var d = [];
+console.log("d -ийн төрөл нь " + typeof d);
 
 c.location = "ub";
 c.coordinate = 12342;
-
-var d = [];
 
 d.push(234);
 
@@ -20,7 +20,7 @@ console.log(typeof d);
 
 var z = null;
 
-console.log(typeof z);
+console.log("z -ийн төрөл нь " + typeof z);
 
 var e;
 

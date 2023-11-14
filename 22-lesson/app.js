@@ -1,4 +1,4 @@
-var data = [12, 13, 17, 90, 60, 62, 32, 212, 43, 53, 61];
+var data = [12, 13, 17, 90, 60, 62, 21, 212, 43, 53, 61];
 document.getElementById("problem").innerHTML = data;
 
 function myfunction() {

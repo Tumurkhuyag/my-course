@@ -4,10 +4,52 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lesson 23</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      li {
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Хичээл 23</h1>
+    <h1>Lesson 23</h1>
+    <h2>Утган хандалт болон заагч хандалтын тухай - value VS reference</h2>
+    <div>
+      <h3>Primitive vs. Object</h3>
+      <p>
+        Privimitive өгөгдлийн төрлийг ийш тийш нь дамжуулахад аюулгүй байдал бол
+        Object өгөгдлийн төрлүүдийг дамжуулах үед утга нь өөрчлөгдөж ирдэг тул
+        болгоомжтой байх хэрэгтэй. Учир нь
+      </p>
+
+      <ol>
+        <li>
+          Value (Premitive буюу энгийн хувьсагчийн өгөгдлийг утгыг өөр
+          хувьсагчид дамжуулахад санах ойд шинээр үүр үүсч дамжуулсан утга
+          тухайн хувьсагчид зориулсан шинэ үүрэнд хуулбарлагддаг)
+        </li>
+        <ul>
+          <li>var price = 100,000;</li>
+          <li>function info(price) {price = price - 2000}</li>
+        </ul>
+        <li>
+          Reference (Object буюу обьект хувьсагчийн өгөгдлийн утгыг өөр обьект
+          хувьсагчид дамжуулахад reference буюу нэг санах ойн үүрлүү заах
+          байдлаар утгыг харуулдаг ба аль нэг обьект хувьсагчийн утгыг өөрчлөх
+          үед нөгөөгийнх нь утга хамтдаа өөрчлөгдөнө.)
+        </li>
+        <ul>
+          <li>var product1.price = 100,000;</li>
+          <li>var product[0] = 200,000;</li>
+          <li>
+            function newInfo(product1) {product1.price = product1.price - 2000}
+          </li>
+        </ul>
+      </ol>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

@@ -2,15 +2,15 @@ function myfunction() {
   var input = "";
   var pushUps = [];
 
-  while (input !== "Одоо болно") {
-    input = prompt("Суниах уу?");
+  while (input !== "Зогс") {
+    input = prompt("Суниах уу? Stop гэж бичвэл болионо");
     pushUps.push(input);
     console.log(pushUps);
   }
 
   var result = "";
   pushUps.forEach(function (command) {
-    result += "<dt>" + command;
+    result += "<dt>" + command + "</dt>";
     console.log(result);
   });
 
