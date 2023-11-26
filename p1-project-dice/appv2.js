@@ -1,5 +1,5 @@
 // Тоглогчийн шоо хаях ээлж (нэгдүгээр тоглогчийг 0, хоёрдугаа тоглогч 1)-ийг оноох хэсэг
-var activePlayer = 1;
+var activePlayer = 0;
 
 // Тоглогч нарын оноог тус тусд нэмж хадгалдаг хэсэг
 var scores = [0, 0];
@@ -22,7 +22,30 @@ diceDom.style.display = "none";
 
 // roll dice товч дээр дарах үед eventListener ажиллуулж anonymous call back function дуудаж шоог аль талаараа буусныг харуулдаг болгох
 document.querySelector(".btn-roll").addEventListener("click", function () {
+  // 1-6 хүртэлх random тоо буулгах
   var diceNumber = Math.floor(Math.random() * 6) + 1;
+
+  // css file -руу хандаж шооны зургийг веб дээр гаргаж ирэх
   diceDom.style.display = "block";
+
+  // src attribute -ыг өөрчилж шооны зургийг өөрчлөх
   diceDom.src = "dice-" + diceNumber + ".png";
+
+  // Буусан тоо нь 1-ээс ялгаатай бол идэвхтэй тоглогчийн ээлжийн оноог нэмэгдүүлнэ
+  if (diceNumber !== 1) {
+    // Идэвхтэй тоглогчийн оноог буусан шоогоор нэмэгдүүлнэ
+    roundScore = roundScore + diceNumber;
+    document.getElementById("current-" + activePlayer).textContent = roundScore;
+  } else {
+    // Current оноог 0 болгож, тоглогчийн ээлжийг солино.
+    roundScore = 0;
+    document.getElementById("current-" + activePlayer).textContent = roundScore;
+    activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+
+    // Улаан цэг болон background өнгийг өөрчилнө.
+    document.querySelector(".player-0-panel").classList.toggle("active");
+    document.querySelector(".player-1-panel").classList.toggle("active");
+
+    diceDom.style.display = "none";
+  }
 });
