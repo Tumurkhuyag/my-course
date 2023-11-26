@@ -16,9 +16,11 @@ document.getElementById("current-0").innerHTML = 0;
 document.getElementById("score-1").innerHTML = 0;
 document.getElementById("current-1").innerHTML = 0;
 
+// document.querySelector(".dice") функцийг дахин дахин ажиллуулахгүйгээр нэг хувьсагч дотор обьект болгож хадгалах
 var diceDom = document.querySelector(".dice");
 diceDom.style.display = "none";
 
+// roll dice товч дээр дарах үед eventListener ажиллуулж anonymous call back function дуудаж шоог аль талаараа буусныг харуулдаг болгох
 document.querySelector(".btn-roll").addEventListener("click", function () {
   var diceNumber = Math.floor(Math.random() * 6) + 1;
   diceDom.style.display = "block";
