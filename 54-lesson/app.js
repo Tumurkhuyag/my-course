@@ -1,5 +1,5 @@
 var tomImg = {
-  file: "/Lesson 06/profile-image-Tom.jpg",
+  file: "/06-lesson/profile-image-Tom.jpg",
   content: "Том",
   identifyImage: function (img, info) {
     console.log(img + " " + info);
@@ -12,11 +12,11 @@ var tomImg = {
 tomImg.identifyImage("img1", "info1");
 
 var unosImg = {
-  file: "/Lesson 06/profile-image-Uno.jpg",
+  file: "/06-lesson/profile-image-Uno.jpg",
   content: "Uno",
 };
 
-// BIND
+// BIND : Тухайн функцийн шинээр үүсгээд this заагчийг нь өөрчилдөг
 var clonTomImg = tomImg.identifyImage.bind(unosImg, "img2", "info2");
 // clonTomImg("img2", "info2");
 clonTomImg();

@@ -21,14 +21,18 @@ function maxHeartBeat(el) {
   return Math.round(206.9 - 0.67 * el);
 }
 
-function isRetired(el) {
-  return 60 <= el;
-}
+// function isRetired(el) {
+//   return 60 <= el;
+// }
 
 console.log(ages);
 console.log(processArr(ages, isAdult));
 console.log(processArr(ages, maxHeartBeat));
-console.log(processArr(ages, isRetired));
+console.log(
+  processArr(ages, function (age) {
+    return age >= 65 ? "RETIRED" : "working";
+  })
+);
 
 /*var ages = findAge();
 

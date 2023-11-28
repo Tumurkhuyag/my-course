@@ -47,5 +47,5 @@ var cow = new Animal(3, "үнээ", 800000, "алаг");
 cow.appear("appears1");
 cow.feeds("eats1");
 
-var h1 = new Human(30, "Том", 500000000, "шар");
+var h1 = new Human(30, "Том", 5000000000, "шар");
 h1.think("think1", "JavaScript сурч л байна даа");
