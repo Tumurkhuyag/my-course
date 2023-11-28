@@ -25,6 +25,7 @@ function prepare() {
   for (var i = 0; i < 3; i++) {
     arr.push(
       (function (j) {
+        console.log("j бол давталт дууссаны дараа : " + j);
         return function () {
           console.log(j);
         };
