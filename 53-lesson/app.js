@@ -17,8 +17,24 @@ function Animal(ner) {
   };
 }
 
+// Animal гэсэн эх model prototype -д drinking гэсэн функц нэмж өгсөн.
+Animal.prototype.drinking = function () {
+  console.log(this.name + " is drinking.");
+};
+
+// Animal гэсэн эх model prototype -д sleeping гэсэн функц нэмж өгсөн.
+Animal.prototype.sleeping = function () {
+  console.log(this.name + " is sleeping.");
+};
+
 var animal1 = new Animal("Sheep");
 animal1.eating();
+
+console.log(animal1);
+
+// Animal гэсэн эх model -ийн prototype доторх drinking функцийг харах
+console.log(Animal.prototype);
+console.log(animal1.__proto__);
 
 var isTrue = animal1.__proto__ === Animal.prototype;
 console.log(isTrue);

@@ -5,7 +5,7 @@ var p0 = {
   job: "UX/UI designer & Javascript developer",
   info: function () {
     document.getElementById("profile-image-0").src =
-      "/Lesson 06/profile-image-" + this.name + ".jpg";
+      "/06-lesson/profile-image-" + this.name + ".jpg";
     document.getElementById("profile-image-0").alt = this.name;
     document.getElementById("profile-image-0").title = this.name;
     document.getElementById("preview-0").textContent =
@@ -19,7 +19,7 @@ p1.name = "Uno";
 p1.job = "Student";
 p1.info = function () {
   document.getElementById("profile-image-1").src =
-    "/Lesson 06/profile-image-" + this.name + ".jpg";
+    "/06-lesson/profile-image-" + this.name + ".jpg";
   document.getElementById("profile-image-1").alt = this.name;
   document.getElementById("profile-image-1").title = this.name;
   document.getElementById("preview-1").textContent =
