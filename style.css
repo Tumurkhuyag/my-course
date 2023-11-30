@@ -51,3 +51,9 @@ img {
   width: 150px;
   border-radius: 100px;
 }
+
+section {
+  padding: 10px;
+  background-color: #efefef;
+  margin-bottom: 10px;
+}
