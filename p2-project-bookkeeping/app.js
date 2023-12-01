@@ -27,8 +27,6 @@ var financeController = (function () {})();
 
 // Холбогч контроллер
 var appController = (function (uiController, appController) {
-  var DOM = uiController.getDOMstrings();
-
   var ctrlAddItem = function () {
     // 1.Оруулах өгөгдлийг дэлгэцээс олж авна
     console.log(uiController.getInput());
@@ -38,12 +36,24 @@ var appController = (function (uiController, appController) {
     // 5.Эцсийн үлдэгдэл, тооцоог дэлгэцэнд гаргана
   };
 
-  document.querySelector(DOM.addBtn).addEventListener("click", function () {
-    ctrlAddItem();
-  });
-  document.addEventListener("keypress", function (event) {
-    if (event.key === "Enter" || event.switch === "13") {
+  var setupEventListeners = function () {
+    var DOM = uiController.getDOMstrings();
+
+    document.querySelector(DOM.addBtn).addEventListener("click", function () {
       ctrlAddItem();
-    }
-  });
+    });
+    document.addEventListener("keypress", function (event) {
+      if (event.key === "Enter" || event.switch === "13") {
+        ctrlAddItem();
+      }
+    });
+  };
+
+  return {
+    init: function () {
+      setupEventListeners();
+    },
+  };
 })(uiController, appController);
+
+appController.init();
