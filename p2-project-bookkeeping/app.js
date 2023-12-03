@@ -132,9 +132,3 @@ var appController = (function (uiController, financeController) {
 })(uiController, financeController);
 
 appController.init();
-
-// financeController IIFE функц дотор public service бичиж далдлагдсан хувьсагч, функцуудад хандах
-
-// appController -оос financeController -ын private хувьсагч, функцуудруу хандах боломжтой болгох
-
-// Массивын хамгийн сүүлийн элементийн утга дээр нэгийг нэмэх байдлаар гүйлгээний ID -ыг загварчлах
