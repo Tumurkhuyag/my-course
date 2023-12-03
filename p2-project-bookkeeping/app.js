@@ -37,7 +37,7 @@ var financeController = (function () {
   };
 
   var data = {
-    allItems: {
+    items: {
       inc: [],
       exp: [],
     },
@@ -47,14 +47,38 @@ var financeController = (function () {
       exp: 0,
     },
   };
+
+  // financeController IIFE функц дотор public service бичиж далдлагдсан хувьсагч, функцуудад хандах
+  return {
+    addItem: function (type, desc, val) {
+      var item, id;
+
+      data.items[type].length === 0
+        ? (id = 1)
+        : (id = data.items[type][data.items[type].length - 1].id + 1);
+
+      type === "inc"
+        ? (item = new Income(id, desc, val))
+        : (item = new Expense(id, desc, val));
+
+      data.items[type].push(item);
+    },
+
+    seeData: function () {
+      return data;
+    },
+  };
 })();
 
 // Холбогч контроллер
-var appController = (function (uiController, appController) {
+var appController = (function (uiController, financeController) {
   var ctrlAddItem = function () {
     // 1.Оруулах өгөгдлийг дэлгэцээс олж авна
-    console.log(uiController.getInput());
+    var input = uiController.getInput();
+    console.log(input);
     // 2.Оруулж авсан өгөгдлүүдээ санхүүгийн контроллерт дамжуулж, тэндээ хадгална
+    financeController.addItem(input.type, input.description, input.value);
+
     // 3.Олж авсан өгөгдлүүдээ вебийнхээ тохирох хэсэгт нь гаргана
     // 4.Төсвийг тооцоолно
     // 5.Эцсийн үлдэгдэл, тооцоог дэлгэцэнд гаргана
@@ -78,6 +102,12 @@ var appController = (function (uiController, appController) {
       setupEventListeners();
     },
   };
-})(uiController, appController);
+})(uiController, financeController);
 
 appController.init();
+
+// financeController IIFE функц дотор public service бичиж далдлагдсан хувьсагч, функцуудад хандах
+
+// appController -оос financeController -ын private хувьсагч, функцуудруу хандах боломжтой болгох
+
+// Массивын хамгийн сүүлийн элементийн утга дээр нэгийг нэмэх байдлаар гүйлгээний ID -ыг загварчлах
