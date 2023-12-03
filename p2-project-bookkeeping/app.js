@@ -5,6 +5,8 @@ var uiController = (function () {
     inputDescription: ".add__description",
     inputValue: ".add__value",
     addBtn: ".add__btn",
+    incomeList: ".income__list",
+    expenseList: ".expenses__list",
   };
 
   return {
@@ -12,7 +14,7 @@ var uiController = (function () {
       return {
         type: document.querySelector(DOMstrings.inputType).value,
         description: document.querySelector(DOMstrings.inputDescription).value,
-        value: document.querySelector(DOMstrings.inputValue).value,
+        value: parseInt(document.querySelector(DOMstrings.inputValue).value),
       };
     },
 
@@ -20,15 +22,33 @@ var uiController = (function () {
       return DOMstrings;
     },
 
+    clearFields: function () {
+      var fields = document.querySelectorAll(
+        DOMstrings.inputDescription + ", " + DOMstrings.inputValue
+      );
+
+      // Convert List to Array
+      var fieldsArr = Array.prototype.slice.call(fields);
+      fieldsArr.forEach(function (el, index, array) {
+        el.value = "";
+      });
+
+      fieldsArr[0].focus();
+
+      // for (var i = 0; i < fieldsArr.length; i++) {
+      //   fieldsArr[i].value = "";
+      // }
+    },
+
     addListItem: function (item, type) {
       // Орлого зарлагын элементийг агуулсан html -ийг бэлтгэх
       var html, listType;
       if (type === "inc") {
-        listType = ".income__list";
+        listType = DOMstrings.incomeList;
         html =
           '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       } else {
-        listType = ".expenses__list";
+        listType = DOMstrings.expenseList;
         html =
           '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       }
@@ -96,19 +116,21 @@ var appController = (function (uiController, financeController) {
     // 1.Оруулах өгөгдлийг дэлгэцээс олж авна
     var input = uiController.getInput();
 
-    // 2.Оруулж авсан өгөгдлүүдээ санхүүгийн контроллерт дамжуулж, тэндээ хадгална
-    var item = financeController.addItem(
-      input.type,
-      input.description,
-      input.value
-    );
+    if (input.description !== "" && input.value !== "") {
+      // 2.Оруулж авсан өгөгдлүүдээ санхүүгийн контроллерт дамжуулж, тэндээ хадгална
+      var item = financeController.addItem(
+        input.type,
+        input.description,
+        input.value
+      );
 
-    console.log(item);
-    // 3.Олж авсан өгөгдлүүдээ вебийнхээ тохирох хэсэгт нь гаргана
-    uiController.addListItem(item, input.type);
+      // 3.Олж авсан өгөгдлүүдээ вебийнхээ тохирох хэсэгт нь гаргана
+      uiController.addListItem(item, input.type);
+      uiController.clearFields();
 
-    // 4.Төсвийг тооцоолно
-    // 5.Эцсийн үлдэгдэл, тооцоог дэлгэцэнд гаргана
+      // 4.Төсвийг тооцоолно
+      // 5.Эцсийн үлдэгдэл, тооцоог дэлгэцэнд гаргана
+    }
   };
 
   var setupEventListeners = function () {
