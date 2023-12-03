@@ -27,6 +27,28 @@
       </section>
       <section>
         <h3>Суралцсан</h3>
+        <section style="background-color: aliceblue">
+          <p>Орлого зарлага оруулах</p>
+          <p>
+            <select class="input" id="add__type">
+              <option value="inc" selected>+</option>
+              <option value="exp">-</option>
+            </select>
+            <input
+              type="text"
+              id="add__description"
+              class="input"
+              placeholder="Тайлбар" />
+            <input
+              class="input"
+              type="number"
+              id="add__value"
+              placeholder="0" />
+          </p>
+          <ul style="text-align: left" id="show__last"></ul>
+          <button id="btn__add">Add item</button>
+        </section>
+
         <p>
           Далдлагдсан функц болон өгөгдлүүдрүү хандах боломжтой public service
           загварчлах
