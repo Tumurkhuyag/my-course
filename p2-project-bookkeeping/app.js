@@ -14,6 +14,7 @@ var uiController = (function () {
       return {
         type: document.querySelector(DOMstrings.inputType).value,
         description: document.querySelector(DOMstrings.inputDescription).value,
+        // Strings хэлбэрээр орж ирсэн тоон утгыг Integer болгож хувиргах
         value: parseInt(document.querySelector(DOMstrings.inputValue).value),
       };
     },
@@ -78,6 +79,15 @@ var financeController = (function () {
     this.value = value;
   };
 
+  var calculateTotal = function (type) {
+    var sum = 0;
+    data.items[type].forEach(function (el) {
+      sum = sum + el.value;
+    });
+
+    data.totals[type] = sum;
+  };
+
   var data = {
     items: {
       inc: [],
@@ -88,10 +98,37 @@ var financeController = (function () {
       inc: 0,
       exp: 0,
     },
+
+    balance: 0,
+
+    ratio: 0,
   };
 
   // financeController IIFE функц дотор public service бичиж далдлагдсан хувьсагч, функцуудад хандах
   return {
+    calculateBalance: function () {
+      // Нийт орлогыг тооцоолно
+      calculateTotal("inc");
+
+      // Нийт зарлагыг тооцоолно
+      calculateTotal("exp");
+
+      // Балансын дүнг тооцоолно
+      data.balance = data.totals.inc - data.totals.exp;
+
+      // Орлого, зарлагын хувийг тооцоолно
+      data.ratio = Math.round((data.totals.exp / data.totals.inc) * 100);
+    },
+
+    getBalance: function () {
+      return {
+        balance: data.balance,
+        ratio: data.ratio,
+        totalInc: data.totals.inc,
+        totalExp: data.totals.exp,
+      };
+    },
+
     addItem: function (type, desc, val) {
       var item, id;
 
@@ -128,8 +165,14 @@ var appController = (function (uiController, financeController) {
       uiController.addListItem(item, input.type);
       uiController.clearFields();
 
-      // 4.Төсвийг тооцоолно
-      // 5.Эцсийн үлдэгдэл, тооцоог дэлгэцэнд гаргана
+      // 4.Балансыг тооцоолно
+      financeController.calculateBalance();
+
+      // 5.Балансын дүнг авч хадгална
+      var balance = financeController.getBalance();
+
+      // 6.Балансын дүнг дэлгэцэнд гаргана
+      console.log(balance);
     }
   };
 
