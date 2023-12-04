@@ -7,6 +7,10 @@ var uiController = (function () {
     addBtn: ".add__btn",
     incomeList: ".income__list",
     expenseList: ".expenses__list",
+    balance: ".budget__value",
+    totalInc: ".budget__income--value",
+    totalExp: ".budget__expenses--value",
+    ratio: ".budget__expenses--percentage",
   };
 
   return {
@@ -39,6 +43,19 @@ var uiController = (function () {
       // for (var i = 0; i < fieldsArr.length; i++) {
       //   fieldsArr[i].value = "";
       // }
+    },
+
+    showBalance: function (total) {
+      document.querySelector(DOMstrings.balance).textContent = total.balance;
+
+      document.querySelector(DOMstrings.totalInc).textContent = total.totalInc;
+
+      document.querySelector(DOMstrings.totalExp).textContent = total.totalExp;
+
+      total.ratio !== 0
+        ? (document.querySelector(DOMstrings.ratio).textContent =
+            total.ratio + "%")
+        : (document.querySelector(DOMstrings.ratio).textContent = total.ratio);
     },
 
     addListItem: function (item, type) {
@@ -172,7 +189,7 @@ var appController = (function (uiController, financeController) {
       var balance = financeController.getBalance();
 
       // 6.Балансын дүнг дэлгэцэнд гаргана
-      console.log(balance);
+      uiController.showBalance(balance);
     }
   };
 
@@ -191,6 +208,12 @@ var appController = (function (uiController, financeController) {
 
   return {
     init: function () {
+      uiController.showBalance({
+        balance: 0,
+        ratio: 0,
+        totalInc: 0,
+        totalExp: 0,
+      });
       setupEventListeners();
     },
   };
