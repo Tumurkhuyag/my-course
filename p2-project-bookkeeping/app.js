@@ -100,6 +100,17 @@ var financeController = (function () {
     this.id = id;
     this.description = description;
     this.value = value;
+    this.percentage = -1;
+  };
+
+  Expense.prototype.calcPercentage = function (totalIncome) {
+    totalIncome > 0
+      ? (this.percentage = Math.round((this.value / totalIncome) * 100))
+      : (this.percentage = 0);
+  };
+
+  Expense.prototype.getPercentage = function () {
+    return this.percentage;
   };
 
   var calculateTotal = function (type) {
@@ -140,7 +151,23 @@ var financeController = (function () {
       data.balance = data.totals.inc - data.totals.exp;
 
       // Орлого, зарлагын хувийг тооцоолно
-      data.ratio = Math.round((data.totals.exp / data.totals.inc) * 100);
+      data.totals.inc > 0
+        ? (data.ratio = Math.round((data.totals.exp / data.totals.inc) * 100))
+        : (data.ratio = 0);
+    },
+
+    calculatePercentages: function () {
+      data.items.exp.forEach(function (el) {
+        el.calcPercentage(data.totals.inc);
+      });
+    },
+
+    getPercentages: function name() {
+      var allPercentages = data.items.exp.map(function (el) {
+        return el.getPercentage();
+      });
+
+      return allPercentages;
     },
 
     getBalance: function () {
@@ -205,15 +232,29 @@ var appController = (function (uiController, financeController) {
       uiController.addListItem(item, input.type);
       uiController.clearFields();
 
-      // 4.Балансыг тооцоолно
-      financeController.calculateBalance();
-
-      // 5.Балансын дүнг авч хадгална
-      var balance = financeController.getBalance();
-
-      // 6.Балансын дүнг дэлгэцэнд гаргана
-      uiController.showBalance(balance);
+      // 4.Балансын тооцоог шинэчилж харуулах
+      updateBalance();
     }
+  };
+
+  var updateBalance = function () {
+    // 1.Балансыг тооцоолно
+    financeController.calculateBalance();
+
+    // 2.Балансын дүнг авч хадгална
+    var balance = financeController.getBalance();
+
+    // 3.Балансын дүнг дэлгэцэнд гаргана
+    uiController.showBalance(balance);
+
+    // 4.Зардлуудын хувийг тооцоолно
+    financeController.calculatePercentages();
+
+    // 5.Зардлуудын хувийг хүлээж авна
+    var allPercentages = financeController.getPercentages();
+
+    // 6.Зардлуудын хувийг дэлгэцэнд гаргана
+    console.log(allPercentages);
   };
 
   var setupEventListeners = function () {
@@ -245,7 +286,8 @@ var appController = (function (uiController, financeController) {
           // 2.Дэлгэц дээрээс тухайн элементийг устгах
           uiController.deteleListItem(id);
 
-          // 3.Үлдэгдэл тооцоог шинэчилж харуулах
+          // 3.Балансын тооцоог шинэчилж харуулах
+          updateBalance();
         }
       });
   };
