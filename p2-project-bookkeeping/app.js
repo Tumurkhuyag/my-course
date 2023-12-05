@@ -12,6 +12,13 @@ var uiController = (function () {
     totalExp: ".budget__expenses--value",
     ratio: ".budget__expenses--percentage",
     containerDiv: ".container",
+    expensePercentage: ".item__percentage",
+  };
+
+  var nodeListForEach = function (list, callback) {
+    for (var i = 0; i < list.length; i++) {
+      callback(list[i], i);
+    }
   };
 
   return {
@@ -22,6 +29,16 @@ var uiController = (function () {
         // Strings хэлбэрээр орж ирсэн тоон утгыг Integer болгож хувиргах
         value: parseInt(document.querySelector(DOMstrings.inputValue).value),
       };
+    },
+
+    displayPercentages: function (allPercentages) {
+      // Зарлагын nodeList -ийг олох <button id="" ><p>Click me</p></button>
+      var elements = document.querySelectorAll(DOMstrings.expensePercentage);
+
+      // nodeList -д зориулсан forEach давталт
+      nodeListForEach(elements, function (el, index) {
+        el.textContent = allPercentages[index] + "%";
+      });
     },
 
     getDOMstrings: function () {
@@ -254,6 +271,7 @@ var appController = (function (uiController, financeController) {
     var allPercentages = financeController.getPercentages();
 
     // 6.Зардлуудын хувийг дэлгэцэнд гаргана
+    uiController.displayPercentages(allPercentages);
     console.log(allPercentages);
   };
 
