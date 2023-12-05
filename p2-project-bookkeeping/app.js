@@ -146,6 +146,19 @@ var financeController = (function () {
       };
     },
 
+    // Санхүүгийн модулаас id -аар нь хайж орлого зарлага устгадаг функц
+    deleteItem: function (type, id) {
+      var ids = data.items[type].map(function (el) {
+        return el.id;
+      });
+
+      var index = ids.indexOf(id);
+
+      if (index !== -1) {
+        data.items[type].splice(index, 1);
+      }
+    },
+
     addItem: function (type, desc, val) {
       var item, id;
 
