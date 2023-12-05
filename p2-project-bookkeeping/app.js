@@ -11,6 +11,7 @@ var uiController = (function () {
     totalInc: ".budget__income--value",
     totalExp: ".budget__expenses--value",
     ratio: ".budget__expenses--percentage",
+    containerDiv: ".container",
   };
 
   return {
@@ -64,11 +65,11 @@ var uiController = (function () {
       if (type === "inc") {
         listType = DOMstrings.incomeList;
         html =
-          '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+          '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       } else {
         listType = DOMstrings.expenseList;
         html =
-          '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       }
 
       // Тэр HTML дотроо орлого зарлагын утгуудыг REPLACE ашиглаж өөрчлөх
@@ -174,6 +175,10 @@ var financeController = (function () {
 
       return item;
     },
+
+    seeData: function () {
+      return { data };
+    },
   };
 })();
 
@@ -212,11 +217,31 @@ var appController = (function (uiController, financeController) {
     document.querySelector(DOM.addBtn).addEventListener("click", function () {
       ctrlAddItem();
     });
+
     document.addEventListener("keypress", function (event) {
       if (event.key === "Enter" || event.switch === "13") {
         ctrlAddItem();
       }
     });
+
+    document
+      .querySelector(DOM.containerDiv)
+      .addEventListener("click", function (event) {
+        var id = event.target.parentNode.parentNode.parentNode.parentNode.id;
+
+        if (id) {
+          var list = id.split("-");
+          var type = list[0];
+          var idNum = parseInt(list[1]);
+
+          // 1.Санхүүгийн модуль дотороос type, id ашиглан лист устгах
+          financeController.deleteItem(type, idNum);
+
+          // 2.Дэлгэц дээрээс тухайн элементийг устгахп
+
+          // 3.Үлдэгдэл тооцоог шинэчилж харуулах
+        }
+      });
   };
 
   return {

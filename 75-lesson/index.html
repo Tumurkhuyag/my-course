@@ -3,15 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson</title>
+    <title>Lesson 75</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="center">
     <div>
-      <h1>Lesson</h1>
-      <h2></h2>
+      <h1>Lesson 75</h1>
+      <h2>
+        Устгах эвент листенерүүдийг холбох split ашиглан тэмдэгт мөрийг хуваах
+      </h2>
+      <section>
+        <h3>Төслийн хэсэг</h3>
+        <p>DOMstrings обьект дотор HTML class оруулж ирэх</p>
+        <p>setupEventListeners дотор устгах эвент үүсгэх</p>
+        <p>uiController дотор HTML -ээс устгах гэж буй листын id -г олж авах</p>
+        <p>Зөвхөн лист доторх устгах товчийг дарах үед id -г авдаг болгох</p>
+        <p>
+          strings өгөгдлийн төрөл бүхий id -ыг split функц ашиглан type болон
+          number болгож хоёр хуваах
+        </p>
+        <p>string хэлбэртэй idNum -ийг Int болгож хувиргах</p>
+        <p>
+          uiController дотор list үүсгэх HTML бичиглэлийн id -г Javascript дотор
+          list id -тай ижилхэн болгох
+        </p>
+        <p>
+          хуваасан ID ашиглан financeController доторх deleteItem функцээр
+          дамжуулан massiv дотроос өгөгдлийг устгах
+        </p>
+      </section>
+      <section>
+        <h3>Суралцсан</h3>
+        <p>
+          .addEventListener("click", function (event) {var id =
+          event.target.parentNode.id})
+        </p>
+        <p>var id = "income-1"; var mass = id.split("-")</p>
+      </section>
     </div>
 
-    <script src=""></script>
+    <script src="app.js"></script>
   </body>
 </html>
