@@ -59,6 +59,11 @@ var uiController = (function () {
         : (document.querySelector(DOMstrings.ratio).textContent = total.ratio);
     },
 
+    deteleListItem: function (id) {
+      var el = document.getElementById(id);
+      el.parentNode.removeChild(el);
+    },
+
     addListItem: function (item, type) {
       // Орлого зарлагын элементийг агуулсан html -ийг бэлтгэх
       var html, listType;
@@ -237,7 +242,8 @@ var appController = (function (uiController, financeController) {
           // 1.Санхүүгийн модуль дотороос type, id ашиглан лист устгах
           financeController.deleteItem(type, idNum);
 
-          // 2.Дэлгэц дээрээс тухайн элементийг устгахп
+          // 2.Дэлгэц дээрээс тухайн элементийг устгах
+          uiController.deteleListItem(id);
 
           // 3.Үлдэгдэл тооцоог шинэчилж харуулах
         }

@@ -10,6 +10,25 @@
     <div>
       <h1>Lesson 76</h1>
       <h2>Элементүүдийг дэлгэцээс устгах removeChild функц</h2>
+      <section>
+        <h3>Төслийн хэсэг</h3>
+        <p>deleteListItem() функцийг uiController дотор бичих</p>
+        <p>
+          parentNode -өөр эцэг элементийг барьж авч removeChild(id) функцээр
+          эцэг элементийн доторх хүүхэд элементийг устгах
+        </p>
+        <p>
+          uiController.deteleListItem(id) байдлаар устгах элементийг ID -ийг
+          оруулж дэлгэцэн дээрх листийг устгадаг болгох
+        </p>
+      </section>
+      <section id="containerSection">
+        <h3>Суралцсан</h3>
+        <button id="delete-1">Устга x</button>
+        <button id="delete-2">Энийг бас утсга x</button>
+        <p>var el = document.getElementById(id);</p>
+        <p>el.parentNode.removeChild(el);</p>
+      </section>
     </div>
 
     <script src="app.js"></script>
