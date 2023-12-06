@@ -13,6 +13,7 @@ var uiController = (function () {
     ratio: ".budget__expenses--percentage",
     containerDiv: ".container",
     expensePercentage: ".item__percentage",
+    dateLabel: ".budget__title--month",
   };
 
   var nodeListForEach = function (list, callback) {
@@ -21,7 +22,37 @@ var uiController = (function () {
     }
   };
 
+  var formatMoney = function (number, type) {
+    number = number + "";
+
+    x = number.split("").reverse().join("");
+
+    y = "";
+    var count = 1;
+
+    for (let i = 0; i < x.length; i++) {
+      y = y + x[i];
+
+      if (count % 3 === 0) y = y + ",";
+      count++;
+    }
+
+    z = y.split("").reverse().join("");
+
+    if (z[0] === ",") z = z.substr(1, z.length - 1);
+
+    type === "inc" ? (z = "+ " + z) : (z = "- " + z);
+
+    return z;
+  };
+
   return {
+    displayDate: function () {
+      var today = new Date();
+      document.querySelector(DOMstrings.dateLabel).textContent =
+        today.getFullYear() + " оны " + today.getMonth() + "-р сарын ";
+    },
+
     getInput: function () {
       return {
         type: document.querySelector(DOMstrings.inputType).value,
@@ -64,11 +95,22 @@ var uiController = (function () {
     },
 
     showBalance: function (total) {
-      document.querySelector(DOMstrings.balance).textContent = total.balance;
+      total.balance >= 0 ? (type = "inc") : (type = "exp");
 
-      document.querySelector(DOMstrings.totalInc).textContent = total.totalInc;
+      document.querySelector(DOMstrings.balance).textContent = formatMoney(
+        total.balance,
+        type
+      );
 
-      document.querySelector(DOMstrings.totalExp).textContent = total.totalExp;
+      document.querySelector(DOMstrings.totalInc).textContent = formatMoney(
+        total.totalInc,
+        "inc"
+      );
+
+      document.querySelector(DOMstrings.totalExp).textContent = formatMoney(
+        total.totalExp,
+        "exp"
+      );
 
       total.ratio !== 0
         ? (document.querySelector(DOMstrings.ratio).textContent =
@@ -97,7 +139,7 @@ var uiController = (function () {
       // Тэр HTML дотроо орлого зарлагын утгуудыг REPLACE ашиглаж өөрчлөх
       html = html.replace("%id%", item.id);
       html = html.replace("%description%", item.description);
-      html = html.replace("%value%", item.value);
+      html = html.replace("%value%", formatMoney(item.value, type));
 
       // Бэлтгэсэн HTML -ээ DOM -руу хийх
       document.querySelector(listType).insertAdjacentHTML("beforeend", html);
@@ -272,7 +314,6 @@ var appController = (function (uiController, financeController) {
 
     // 6.Зардлуудын хувийг дэлгэцэнд гаргана
     uiController.displayPercentages(allPercentages);
-    console.log(allPercentages);
   };
 
   var setupEventListeners = function () {
@@ -312,12 +353,15 @@ var appController = (function (uiController, financeController) {
 
   return {
     init: function () {
+      uiController.displayDate();
+
       uiController.showBalance({
         balance: 0,
         ratio: 0,
         totalInc: 0,
         totalExp: 0,
       });
+
       setupEventListeners();
     },
   };
