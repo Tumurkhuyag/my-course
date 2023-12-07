@@ -41,7 +41,7 @@ var uiController = (function () {
 
     if (z[0] === ",") z = z.substr(1, z.length - 1);
 
-    type === "inc" ? (z = "+ " + z) : (z = "- " + z);
+    type === "inc" ? (z = "+ " + z + " ₮") : (z = "- " + z + " ₮");
 
     return z;
   };
