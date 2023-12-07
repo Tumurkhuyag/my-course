@@ -3,23 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 8</title>
+    <title>Lesson 83</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="center">
     <div>
-      <h1>Lesson 8</h1>
-      <h2></h2>
-      <section>
-        <h3>Төслийн хэсэг</h3>
-        <p></p>
-      </section>
+      <h1>Lesson 83</h1>
+      <h2>let, const ашиглан хувьсагч зарлах</h2>
       <section>
         <h3>Суралцсан</h3>
-        <p></p>
+        <p>
+          {const birthDate = 1995} гэж зарласан тохиолдолд birthDate -д өгсөн
+          1995 утгыг дараа нь огт өөрчлөх боломжгүй болно
+        </p>
+        <p>
+          Дараа нь огт өөрчлөхгүй утгатай хувьсагчийг const ... гэж зарладаг
+        </p>
+        <p>
+          {let mouse = 200} гэж зарласан тохиолдолд mouse гэсэн хувьсагчид
+          оногдсон утга зөвхөн block scope дотор буюу {} энэ хоёр хаалтын
+          хооронд л ажиллана
+        </p>
+        <p>
+          const ч мөн адил зөвхөн block scope дотор буюу {} энэ хоёр хаалтын
+          хооронд л ажиллана
+        </p>
+        <p>
+          Эхлээд бүх хувьсагчаа const -оор зарлаж байгаад зарим хувьсагчийг let
+          гэж зарлах шаардлагатайг мэдээд let -ээр өөрчилж зарлаж болно
+        </p>
+        <p>
+          Эсрэгээр нь бүх хувьсагчуудаа let -ээр зарлаж байгаад өөрчлөгдөж
+          болохгүй хувьсагчуудыг const -оор өөрчилж зарлаж болно
+        </p>
       </section>
     </div>
 
-    <script src=""></script>
+    <script src="app.js"></script>
   </body>
 </html>
