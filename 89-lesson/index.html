@@ -3,23 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 8</title>
+    <title>Lesson 89</title>
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      .box {
+        display: inline-block;
+        width: 130px;
+        height: 30px;
+        background-color: green;
+        padding: 10px;
+        font-size: 15px;
+        margin: 4px;
+        color: white;
+      }
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: rgb(142, 18, 18);
+      }
+      .yellow {
+        background-color: rgb(154, 130, 22);
+      }
+      .blue {
+        background-color: blue;
+      }
+    </style>
   </head>
   <body class="center">
     <div>
-      <h1>Lesson 8</h1>
-      <h2></h2>
-      <section>
-        <h3>Төслийн хэсэг</h3>
-        <p></p>
-      </section>
+      <h1>Lesson 89</h1>
+      <h2>ES6 хувилбарын массивтай ажиллах нэмэлт функцүүд</h2>
       <section>
         <h3>Суралцсан</h3>
-        <p></p>
+        <section class="container">
+          <div class="box green">Ногоон</div>
+          <div class="box red">Улаан</div>
+          <div class="box yellow">Шар</div>
+          <div class="box blue">Цэнхэр</div>
+        </section>
+        <p>
+          For loop -> for (... of ...){} <br />
+          for (const element of boxes) {}
+        </p>
+
+        <p>
+          startsWith, endsWith, includes
+          <br />if(element.className.includes(red))
+        </p>
+
+        <p>
+          let ages = [12, 17, 102, 16, 3, 22, 5, 11]; <br />
+          findIndex() <br />
+          (ages.findIndex((el) => el >= 18)) -> 2
+        </p>
+
+        <p>
+          let ages = [12, 17, 102, 16, 3, 22, 5, 11]; <br />
+          findIndex() <br />
+          (ages.find((el) => el >= 18)) -> 102
+        </p>
       </section>
     </div>
 
-    <script src=""></script>
+    <script src="app.js"></script>
   </body>
 </html>
