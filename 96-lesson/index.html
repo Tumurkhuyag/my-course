@@ -3,23 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 8</title>
+    <title>Lesson 96</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="center">
     <div>
-      <h1>Lesson 8</h1>
-      <h2></h2>
-      <section>
-        <h3>Төслийн хэсэг</h3>
-        <p></p>
-      </section>
+      <h1>Lesson 96</h1>
+      <h2>Класс болон дэд класс, удамшил</h2>
       <section>
         <h3>Суралцсан</h3>
-        <p></p>
+        <p>extends заагч ашиглан Super class -аас Sub class үүсгэх</p>
+        <section style="display: inline-block">
+          <p style="text-align: left">
+            class Transaction { <br />.. constructor(desc, value) {<br />
+            .... this.desc = desc; <br />.... this.value = value; } <br />
+            }
+          </p>
+          <p style="text-align: left">
+            class Expense extends Transaction { <br />.. constructor(desc,
+            value) { <br />.... super(desc, -value); <br />.... this.zaaval =
+            zaaval;<br />.. } <br />}
+          </p>
+        </section>
       </section>
     </div>
 
-    <script src=""></script>
+    <script src="app.js"></script>
   </body>
 </html>
