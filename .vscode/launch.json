@@ -5,12 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
-      "name": "Launch Extension",
-      "outFiles": ["${workspaceFolder}/out/**/*.js"],
-      "preLaunchTask": "npm",
+      "command": "npm start",
+      "name": "Run npm start",
       "request": "launch",
-      "type": "extensionHost"
+      "type": "node-terminal"
     }
   ]
 }
