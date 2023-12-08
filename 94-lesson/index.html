@@ -3,23 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 8</title>
+    <title>Lesson 94</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="center">
     <div>
-      <h1>Lesson 8</h1>
-      <h2></h2>
-      <section>
-        <h3>Төслийн хэсэг</h3>
-        <p></p>
-      </section>
+      <h1>Lesson 94</h1>
+      <h2>ES6 класс болон статик функц</h2>
       <section>
         <h3>Суралцсан</h3>
-        <p></p>
+        <p>ES6 бичиглэлээр байгуулагч функц бичиж обьект үүсгэсэн</p>
+        <p style="text-align: left">
+          class Income { <br />
+          .. constructor(id, desc, value) {} <br />
+          .. info(){} <br /><br />
+
+          static usdExchangeRate() { }
+          <br />
+          }
+          <br />
+          <br />
+          let i1 = new Income(6, "Цалин", 2500000);
+          <br />
+          i1.info();
+        </p>
+        <p>static функц</p>
+        <p style="text-align: left">Income.usdExchangeRate()</p>
       </section>
     </div>
 
-    <script src=""></script>
+    <script src="app.js"></script>
   </body>
 </html>
