@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Rogan";
+  src: url("./rogan-regular.otf") format("otf"),
+    url("./rogan-bold.otf") format("otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: #141514aa;
+  font-family: "Rogan";
+  font-size: 17px;
+  font-weight: 500;
+  width: auto;
+  text-align: center;
+  padding: 80px;
+}
+
+img {
+  margin: auto;
+  padding: 40px;
+  height: 160px;
+  display: block;
+}
