@@ -6,7 +6,7 @@ module.exports = {
   entry: "./src/js/index.js",
 
   output: {
-    filename: "main.js",
+    filename: "js/main.js",
     path: path.resolve(__dirname, "docs"),
     // Өмнө нь docs дотор үүссэн хэрэггүй файлуудыг цэвэрлэдэг болголоо
     // clean: true,
