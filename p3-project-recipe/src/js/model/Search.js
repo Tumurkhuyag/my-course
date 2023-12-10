@@ -17,7 +17,7 @@ export default class Search {
 
       return this.result;
     } catch (error) {
-      alert("Асуудал гарлаа: " + error);
+      console.log("Асуудал гарлаа: " + error);
     }
   }
 }

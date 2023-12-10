@@ -1,5 +1,7 @@
 require("@babel/polyfill");
 import Search from "./model/Search";
+import { elements } from "./view/base";
+import * as searchView from "./view/searchView";
 
 // Веб аппын төлөв
 // - Хайлтын query, үр дүн
@@ -10,21 +12,31 @@ import Search from "./model/Search";
 
 const state = {};
 
-const controlSearch = () => {
-  console.log("Дарагдлаа");
+const controlSearch = async () => {
   // 1.Вебээс хайлтын түлхүүр үгийг гаргаж авна
-  const query = "pizza";
+  const query = searchView.getInput();
 
   if (query) {
-    // 2.Тухайн түлхүүр үгээр хайдаг шинэ хайлтын обьектийг үүсгэж өгнө
-    // 3.Үүсгэсэн обьектоо state -рүүгээ хийнэ
-    // 4.Хайлт хийхэд зориулж дэлгэцийн UI бэлтгэнэ
-    // 5.Хайлтыг гүйцэтгэнэ
-    // 6.Хайлтын үр дүнг дэлгэцэнд үзүүлнэ
+    // 2.Тухайн түлхүүр үгээр хайдаг шинэ хайлтын обьектийг үүсгэж,үүсгэсэн обьектоо state -рүүгээ хийнэ
+    state.search = new Search(query);
+    // 3.Хайлт хийхэд зориулж дэлгэцийн UI бэлтгэнэ
+    searchView.clearSearchlQuery();
+    searchView.clearSearchResult();
+
+    // 4.Хайлтыг гүйцэтгэнэ
+    await state.search.doSearch();
+
+    // 5.Хайлтын үр дүнг дэлгэцэнд үзүүлнэ
+    // Хайлтын үр дүнд ирсэн бүх утгуудыг renderRecipes -аар боловсруулахаар дамжуулна
+    if (state.search.result === undefined) {
+      alert(query + " нэртэй илэрц олдсонгүй");
+    } else {
+      searchView.renderRecipes(state.search.result);
+    }
   }
 };
 
-document.querySelector(".search").addEventListener("submit", (e) => {
+elements.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   controlSearch();
 });
