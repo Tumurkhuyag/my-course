@@ -3,20 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 8</title>
+    <title>Lesson 111</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="center">
     <div>
-      <h1>Lesson 8</h1>
-      <h2></h2>
+      <h1>Lesson 111</h1>
+      <h2>
+        Веб апп #3 - Хоолны жор, веб сайтын webpack, babel тохиргоог гүйцэтгэж
+        шалгах
+      </h2>
       <section>
         <h3>Төслийн хэсэг</h3>
-        <p></p>
+        <p>
+          Фолдер зохион байгуулалт <br />
+          dist, src фолдерууд үүсгэх <br />
+          src -руу index.html, dist -рүү css, img -г хуулах
+        </p>
+        <p>
+          package.json файл үүсгэх <br />
+          npm init -y
+        </p>
+        <p>
+          webpack & webpack-cli devDependencies байдлаар суулгах <br />
+          npm install webpack, webpack-cli --save-dev
+        </p>
+        <p>webpack -ын тохиргооны файлыг үүсгэх <br />webpack.config.js</p>
+        <p>
+          HTML Webpack Plugin суулгах <br />
+          npm i --save-dev html-webpack-plugin <br />
+          webpack.config.js дотор зарлаж, plugins дотор тохируулах
+        </p>
+        <p>
+          package.json дотор command script бичсэн, mode -тэй нь цуг
+          <br />"dev": "webpack --mode development",<br />
+          "build": "webpack --mode production"
+        </p>
+        <p>
+          Dev server суулгаж, тохиргоог нь хийх <br />npm install --save-dev
+          webpack-dev-server <br />
+          webpack.config.js => devServer: { static: './dist', },
+        </p>
+        <p>
+          Өмнө нь dist дотор үүссэн хэрэггүй файлуудыг цэвэрлэдэг болголоо
+          <br />{output: /clean: true}
+        </p>
+        <p>
+          src файл -д хаана алдаа гарсныг харах боломжтой болголоо
+          <br />devtool: "inline-source-map",
+        </p>
+        <p>
+          babel суулгах <br />npm install --save-dev @babel/core @babel/cli
+          @babel/preset-env <br />npm install --save @babel/polyfill
+        </p>
+        <p>
+          babel loader суулгах <br />npm install -D babel-loader @babel/core
+          @babel/preset-env webpack
+        </p>
       </section>
       <section>
         <h3>Суралцсан</h3>
-        <p></p>
+        <p>
+          HTML Webpack Plugin <br />index.html файлыг автоматаар тохируулж dist
+          дотор үүсгэж өгдөг
+        </p>
+        <p>
+          .gitignore file үүсгэж дотор нь node_modules гэж бичсэнээр git add
+          хийх үед node_modules -ийг хуулахгүй
+        </p>
       </section>
     </div>
 
