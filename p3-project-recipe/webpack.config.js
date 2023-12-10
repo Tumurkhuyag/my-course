@@ -7,8 +7,8 @@ module.exports = {
 
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    // Өмнө нь dist дотор үүссэн хэрэггүй файлуудыг цэвэрлэдэг болголоо
+    path: path.resolve(__dirname, "docs"),
+    // Өмнө нь docs дотор үүссэн хэрэггүй файлуудыг цэвэрлэдэг болголоо
     // clean: true,
   },
 
@@ -38,7 +38,7 @@ module.exports = {
 
   // Dev server -ийн тохиргоо хийлээ
   devServer: {
-    static: "./dist",
+    static: "./docs",
   },
 
   // src файл -д хаана алдаа гарсныг харах боломжтой болголоо
