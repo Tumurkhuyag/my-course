@@ -1,7 +1,30 @@
-import _ from "lodash";
-import query from "./model/Search";
-import { add, multiply as multi } from "./view/searchView";
+require("@babel/polyfill");
+import axios from "axios";
 
-console.log("query: ", query);
-console.log("add(4, 6) ", add(4, 6));
-console.log("multi(4, 6) ", multi(4, 6));
+async function doSearch(search) {
+  try {
+    let searhResult = await axios(
+      "https://forkify-api.herokuapp.com/api/search?q=" + search
+    );
+
+    // Хайлтын дараах зөвхөн жорын илэрцүүдийг харах
+    const recipesList = searhResult.data.recipes;
+    //  sconsole.log(recipesList);
+
+    // Хайлт доторх аль нэг орцын дэлгэрэнгүйг харах
+    let resultDetail = await axios(
+      "https://forkify-api.herokuapp.com/api/get?rId=" +
+        recipesList[0].recipe_id
+    );
+
+    console.log(recipesList[0].title);
+    let ingredients = resultDetail.data.recipe.ingredients;
+    ingredients.forEach((el) => {
+      return console.log(el);
+    });
+  } catch (error) {
+    alert("Асуудал гарлаа: " + error);
+  }
+}
+
+doSearch("pizza");
