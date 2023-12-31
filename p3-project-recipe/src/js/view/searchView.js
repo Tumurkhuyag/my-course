@@ -2,7 +2,6 @@ import { elements } from "./base";
 
 // Хайлтын үр дүнд ирсэн массивын нэг элементийг дэлгэцэнд гаргахаар боловсруулна (Private function)
 const renderRecipe = (recipe) => {
-  console.log(recipe);
   const markup = `
     <li>
         <a class="results__link" href="#${recipe.recipe_id}">

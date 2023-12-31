@@ -54,6 +54,25 @@ elements.pageButtons.addEventListener("click", (e) => {
   }
 });
 
-const r = new Recipe(47746);
+// Жорын контроллер
+// ---------------------
+const controlRecipe = async () => {
+  // 1) URL-аас ID-ийг салгах
+  const id = window.location.hash.replace("#", "");
 
-r.getRecipe();
+  // 2) Жорын моделийг үүсгэх
+  state.recipe = new Recipe(id);
+
+  // 3) UI дэлгэц бэлтгэх
+
+  // 4) Жороо татаж авчрах
+  await state.recipe.getRecipe();
+
+  // 5) Жорыг гүйцэтгэх хугацаа болон орцыг тооцох
+  state.recipe.calcTime();
+  state.recipe.calcHuniiToo();
+
+  // 6) Жорыг дэлгэцэнд гаргах
+  console.log(state.recipe);
+};
+window.addEventListener("hashchange", controlRecipe);

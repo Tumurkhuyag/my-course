@@ -19,4 +19,13 @@ export default class Recipe {
     this.publisher_url = result.data.recipe.publisher_url;
     this.title = result.data.recipe.title;
   }
+
+  calcTime() {
+    // Найрлага бүр дээр дунджаар 5 минут зарцуулна гэж тооцох
+    this.time = this.ingredients.length * 5;
+  }
+
+  calcHuniiToo() {
+    this.huiiToo = 4;
+  }
 }
