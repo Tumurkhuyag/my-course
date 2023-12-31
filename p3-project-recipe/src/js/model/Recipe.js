@@ -26,6 +26,6 @@ export default class Recipe {
   }
 
   calcHuniiToo() {
-    this.huiiToo = 4;
+    this.huniiToo = 4;
   }
 }
