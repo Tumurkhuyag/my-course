@@ -3,7 +3,11 @@ import Search from "./model/Search";
 import { elements, renderLoader, clearLoader } from "./view/base";
 import * as searchView from "./view/searchView";
 import Recipe from "./model/Recipe";
-import { renderRecipe, clearRecipe } from "./view/recipeView";
+import {
+  renderRecipe,
+  clearRecipe,
+  highlightSelectedRecipe,
+} from "./view/recipeView";
 
 // Веб аппын төлөв
 // - Хайлтын query, үр дүн
@@ -67,6 +71,7 @@ const controlRecipe = async () => {
   // 3) UI дэлгэц бэлтгэх
   clearRecipe();
   renderLoader(elements.recipeDiv);
+  highlightSelectedRecipe(id);
 
   // 4) Жороо татаж авчрах
   await state.recipe.getRecipe();

@@ -10,6 +10,18 @@ const renderNairlaga = (orts) => `
         </div>
     </li>`;
 
+export const highlightSelectedRecipe = (id) => {
+  const arr = Array.from(document.querySelectorAll(".results__link"));
+  arr.forEach((el) => el.classList.remove("results__link--active"));
+
+  const domObj = document.querySelector(`a[href*="${id}"]`);
+  if (domObj) {
+    document
+      .querySelector(`a[href*="${id}"]`)
+      .classList.add("results__link--active");
+  }
+};
+
 export const clearRecipe = () => {
   // Дэлгэц харуулсан жорын дэлгэрэнгүйг цэвэрлэх
   elements.recipeDiv.innerHTML = "";
