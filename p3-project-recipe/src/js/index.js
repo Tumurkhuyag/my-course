@@ -3,6 +3,8 @@ import Search from "./model/Search";
 import { elements, renderLoader, clearLoader } from "./view/base";
 import * as searchView from "./view/searchView";
 import Recipe from "./model/Recipe";
+import List from "./model/List";
+import * as listView from "./view/listView";
 import {
   renderRecipe,
   clearRecipe,
@@ -65,24 +67,55 @@ const controlRecipe = async () => {
   // 1) URL-аас ID-ийг салгах
   const id = window.location.hash.replace("#", "");
 
-  // 2) Жорын моделийг үүсгэх
-  state.recipe = new Recipe(id);
+  // URL дээр ID байгаа эсэхийг шалгана
+  if (id) {
+    // 2) Жорын моделийг үүсгэх
+    state.recipe = new Recipe(id);
 
-  // 3) UI дэлгэц бэлтгэх
-  clearRecipe();
-  renderLoader(elements.recipeDiv);
-  highlightSelectedRecipe(id);
+    // 3) UI дэлгэц бэлтгэх
+    clearRecipe();
+    renderLoader(elements.recipeDiv);
+    highlightSelectedRecipe(id);
 
-  // 4) Жороо татаж авчрах
-  await state.recipe.getRecipe();
+    // 4) Жороо татаж авчрах
+    await state.recipe.getRecipe();
 
-  // 5) Жорыг гүйцэтгэх хугацаа болон орцыг тооцох
-  clearLoader();
-  state.recipe.calcTime();
-  state.recipe.calcHuniiToo();
+    // 5) Жорыг гүйцэтгэх хугацаа болон орцыг тооцох
+    clearLoader();
+    state.recipe.calcTime();
+    state.recipe.calcHuniiToo();
 
-  // 6) Жорыг дэлгэцэнд гаргах
-  renderRecipe(state.recipe);
+    // 6) Жорыг дэлгэцэнд гаргах
+    renderRecipe(state.recipe);
+  }
 };
-window.addEventListener("hashchange", controlRecipe);
-window.addEventListener("load", controlRecipe);
+
+// window.addEventListener("hashchange", controlRecipe);
+// window.addEventListener("load", controlRecipe);
+["hashchange", "load"].forEach((event) =>
+  window.addEventListener(event, controlRecipe)
+);
+
+// Найрлаганы контроллер
+// ---------------------------------
+const controlList = () => {
+  // Найрлаганы моделийг үүсгэнэ
+  state.list = new List();
+  // Өмнө нь харагдаж байсан найрлагуудыг листээс арилгана
+  listView.clearItems();
+
+  // Уг модел рүү одоо харагдаж байгаа жорын бүх найрлагыг авч хийнэ
+  state.recipe.ingredients.forEach((n) => {
+    // Тухайн найрлагыг моделруу хийнэ
+    state.list.addItem(n);
+    // Тухайн найрлагыг дэлгэцэнд гаргана
+    listView.renderItem(n);
+  });
+};
+
+elements.recipeDiv.addEventListener("click", (e) => {
+  // recipe__btn class болон тэрэн дотор байгаа тект, айкон дээр дарахад дарсанд тооцдог болгох
+  if (e.target.matches(".recipe__btn, .recipe__btn *")) {
+    controlList();
+  }
+});
