@@ -5,6 +5,7 @@ import * as searchView from "./view/searchView";
 import Recipe from "./model/Recipe";
 import List from "./model/List";
 import Like from "./model/Like";
+import * as likesView from "./view/likesView";
 import * as listView from "./view/listView";
 import {
   renderRecipe,
@@ -20,7 +21,11 @@ import {
 // - Захиалж байгаа жорын найрлага
 
 const state = {};
+// Like цэсийг арилгах
+likesView.toggleLikeMenu(0);
 
+// Хайлтын контроллер = Model ==> Controller <== View
+// ---------------------
 const controlSearch = async () => {
   // 1.Вебээс хайлтын түлхүүр үгийг гаргаж авна
   const query = searchView.getInput();
@@ -67,6 +72,9 @@ elements.pageButtons.addEventListener("click", (e) => {
 const controlRecipe = async () => {
   // 1) URL-аас ID-ийг салгах
   const id = window.location.hash.replace("#", "");
+  if (!state.likes) {
+    state.likes = new Like();
+  }
 
   // URL дээр ID байгаа эсэхийг шалгана
   if (id) {
@@ -87,7 +95,7 @@ const controlRecipe = async () => {
     state.recipe.calcHuniiToo();
 
     // 6) Жорыг дэлгэцэнд гаргах
-    renderRecipe(state.recipe);
+    renderRecipe(state.recipe, state.likes.isLiked(id));
   }
 };
 
@@ -130,18 +138,27 @@ const controlLike = () => {
   if (state.likes.isLiked(currentRecipeId)) {
     // Like хийсэн бол Like болиулах
     state.likes.deleteLike(currentRecipeId);
-    console.log("+ like ", state.likes);
+    // Like -ийн цэснээс устгана
+    likesView.deleteLike(currentRecipeId);
+    // Like товчны дарсан төлвийг болиулах
+    likesView.toggleLikeBtn(false);
   } else {
     // Like хийгээгүй бол Like хийх
-    state.likes.addLike(
+    const newLike = state.likes.addLike(
       currentRecipeId,
       state.recipe.title,
       state.recipe.publisher,
       state.recipe.image_url
     );
 
-    console.log("- like ", state.likes);
+    // Like цэсэнд Like хийсэн жорыг оруулах
+    likesView.renderLike(newLike);
+
+    // Like товчийг дарсан төлөвтэй харагдуулах
+    likesView.toggleLikeBtn(true);
   }
+
+  likesView.toggleLikeMenu(state.likes.getNumberOfLikes());
 };
 
 elements.recipeDiv.addEventListener("click", (e) => {
