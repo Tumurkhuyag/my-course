@@ -4,6 +4,7 @@ import { elements, renderLoader, clearLoader } from "./view/base";
 import * as searchView from "./view/searchView";
 import Recipe from "./model/Recipe";
 import List from "./model/List";
+import Like from "./model/Like";
 import * as listView from "./view/listView";
 import {
   renderRecipe,
@@ -114,10 +115,41 @@ const controlList = () => {
   });
 };
 
+// Like контроллер
+// ---------------------------------
+const controlLike = () => {
+  // 1. Like -ийн моделийг үүсгэнэ
+  if (!state.likes) {
+    state.likes = new Like();
+  }
+
+  // 2. Одоо харагдаж байгаа жорын Like -ийг олж авах
+  const currentRecipeId = state.recipe.id;
+
+  // 3. Энэ жорыг Like хийсэн эсэхийг шалгах
+  if (state.likes.isLiked(currentRecipeId)) {
+    // Like хийсэн бол Like болиулах
+    state.likes.deleteLike(currentRecipeId);
+    console.log("+ like ", state.likes);
+  } else {
+    // Like хийгээгүй бол Like хийх
+    state.likes.addLike(
+      currentRecipeId,
+      state.recipe.title,
+      state.recipe.publisher,
+      state.recipe.image_url
+    );
+
+    console.log("- like ", state.likes);
+  }
+};
+
 elements.recipeDiv.addEventListener("click", (e) => {
   // recipe__btn class болон тэрэн дотор байгаа тект, айкон дээр дарахад дарсанд тооцдог болгох
   if (e.target.matches(".recipe__btn, .recipe__btn *")) {
     controlList();
+  } else if (e.target.matches(".recipe__love, .recipe__love *")) {
+    controlLike();
   }
 });
 
