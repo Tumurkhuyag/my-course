@@ -21,8 +21,6 @@ import {
 // - Захиалж байгаа жорын найрлага
 
 const state = {};
-// Like цэсийг арилгах
-likesView.toggleLikeMenu(0);
 
 // Хайлтын контроллер = Model ==> Controller <== View
 // ---------------------
@@ -72,9 +70,6 @@ elements.pageButtons.addEventListener("click", (e) => {
 const controlRecipe = async () => {
   // 1) URL-аас ID-ийг салгах
   const id = window.location.hash.replace("#", "");
-  if (!state.likes) {
-    state.likes = new Like();
-  }
 
   // URL дээр ID байгаа эсэхийг шалгана
   if (id) {
@@ -104,6 +99,19 @@ const controlRecipe = async () => {
 ["hashchange", "load"].forEach((event) =>
   window.addEventListener(event, controlRecipe)
 );
+
+window.addEventListener("load", (e) => {
+  // Шинээр like моделийг апп эхлэхэд үүсгэнэ
+  if (!state.likes) {
+    state.likes = new Like();
+  }
+
+  // Like цэсийг гаргах эсэхийг шийдэх
+  likesView.toggleLikeMenu(state.likes.getNumberOfLikes());
+
+  // Local storage дотор Like -ууд байвал цэсэнд нэмж харуулна
+  state.likes.likes.forEach((like) => likesView.renderLike(like));
+});
 
 // Найрлаганы контроллер
 // ---------------------------------
