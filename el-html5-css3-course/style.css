@@ -1,0 +1,60 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu,
+    Cantarell;
+  line-height: 144%;
+}
+
+.center {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu,
+    Cantarell;
+  padding-bottom: 100px;
+}
+
+h1 {
+  padding-top: 40px;
+  font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic",
+    CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde",
+    sans-serif, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu,
+    Cantarell;
+}
+
+h4 {
+  color: #838393;
+  font-weight: 400;
+}
+
+li {
+  list-style-type: none;
+  padding-bottom: 20px;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+}
+
+section {
+  padding: 10px;
+  background-color: #efefef;
+  margin-bottom: 10px;
+}
