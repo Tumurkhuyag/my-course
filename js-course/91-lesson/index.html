@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 91</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="center">
+    <div>
+      <h1>Lesson 91</h1>
+      <h2>Rest параметер ашиглах</h2>
+      <section>
+        <h3>Суралцсан</h3>
+        <p>
+          Функцийн аргументуудыг массив болгож хувиргаж хадгалах <br />
+          var arr = Array.prototype.slice.call(arguments);
+        </p>
+        <p>
+          Функцруу rest параметр дамжуулах <br />
+          printAge("female", true, 1990, 2005, 1996); <br />
+          printAge(gender, registered, ...years) {} <br />
+          years === [1990, 2005, 1996]
+        </p>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

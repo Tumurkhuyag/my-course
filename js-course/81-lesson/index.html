@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 81</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      select {
+        width: 150px;
+        height: 40px;
+      }
+      .box-1,
+      .box-2 {
+        height: 30px;
+        width: auto;
+        background-color: rgb(255, 182, 182);
+        padding: 0;
+        margin: 30px;
+      }
+
+      .blue {
+        background-color: rgb(188, 188, 255);
+      }
+    </style>
+  </head>
+  <body class="center">
+    <div>
+      <h1>Lesson 81</h1>
+      <h2>
+        Орлого зарлага оруулахад өнгөөр ялгаж үзүүлэх Change эвенттэй ажиллах
+      </h2>
+      <section>
+        <h3>Төслийн хэсэг</h3>
+        <p>
+          Орлого зарлагын алийг нь шивж байна гэдгийг ялгахад хялбар болгохын
+          тулд CSS -ээс HTML -ын classlist -рүү class нэмж өгнө
+        </p>
+        <p>
+          addEventListener дотор click биш change эвент ашиглан дэлгэц дээр
+          мэдээлэл хэрхэн өөрчлөгдсөний барьж авах
+        </p>
+      </section>
+      <section>
+        <h3>Суралцсан</h3>
+        <p>addEventListener("change", function () {})</p>
+        <select name="" id="changeColor">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+        </select>
+
+        <div class="box-1"></div>
+        <div class="box-2"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

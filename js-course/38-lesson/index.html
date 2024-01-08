@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 38</title>
+    <link rel="stylesheet" href="../lesson.css" />
+  </head>
+  <body>
+    <h1>Lesson 38</h1>
+    <h2>
+      git үндсэн командууд, git init, status, add, commit, checkout, push, pull
+      командууд
+    </h2>
+    <div>
+      <li>
+        git init - Тухайн төслийн хавтас дотор хоосон git repository үүсгэж өгнө
+      </li>
+      <li>
+        git config -global user.name "NAME": Энэ git систем дээр ажиллаж буй
+        хүний нэр
+      </li>
+      <li>
+        git config -global user.email "email@address.com": Энэ git систем дээр
+        ажиллаж буй хүний имэйл
+      </li>
+
+      <p>Үндсэн командууд</p>
+      <li>
+        <mark>git status</mark> одоо төслийн файлууд ямар байдалтай байгааг
+        харуулна
+      </li>
+      <li>
+        <mark>git add "файлын нэр"</mark> файлын өөрчлөлтийг repository -д
+        хадгалахаар сонгоно
+      </li>
+      <li>
+        <mark>git add -A</mark> бүх файлын өөрчлөлтийг repository -д хадгалахаар
+        сонгоно
+      </li>
+      <li>
+        <mark>git commit -m "Тайлбар"</mark> сонгосон файлыг repository -д бичнэ
+      </li>
+      <li>
+        <mark>git commit -am "Тайлбар"</mark> файлын өөрчлөлтийг хадгалах болон
+        сонгосон файлыг repository -д бичих үйлдлийг хамтад нь хийнэ
+      </li>
+      <li>
+        <mark>git checkout</mark> repository дотроос файлыг буцаан гаргаж авна
+      </li>
+      <li>
+        <mark>git push origin master</mark> local repository -оос remote
+        repository -руу upload хийнэ
+      </li>
+      <li>
+        <mark>git pull origin master</mark> remote repository -оос local
+        repository -руу файлынбуцаан татаж авна
+      </li>
+      <li><mark>git log</mark> өмнөх commit -уудаа харна</li>
+      <li>
+        <mark>git branch</mark> local repository дээр хэдэн branch байгааг харна
+      </li>
+      <p>Staging area</p>
+    </div>
+  </body>
+</html>

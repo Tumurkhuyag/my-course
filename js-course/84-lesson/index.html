@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 84</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="center">
+    <div>
+      <h1>Lesson 84</h1>
+      <h2>Блок хандалт болон IIFE кодын хамгаалалт</h2>
+      <section>
+        <h3>Суралцсан</h3>
+        <p>
+          Хувьсагчаа let гэж зарласнаар IIFE гэх мэт төвөгтэй бичиглэл
+          ашиглахгүйгээр block scope дотор л тухайн хувьсагчдыг ажилладаг
+          болгож, гаднаас хандах боломжгүйгээр өгөгдлийн далдлалт хийж болно
+        </p>
+        <p>
+          IIFE <br />
+          (function () { var name = "Цэцгээ"; console.log(name + " нэртэй
+          хүн."); })();
+        </p>
+        <p>
+          let ... <br />
+          { let name = "Цэцгээ"; console.log(name + " нэртэй хүн." )}
+        </p>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

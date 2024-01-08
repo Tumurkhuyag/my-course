@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 98</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="center">
+    <div>
+      <h1>Lesson 98</h1>
+      <h2>Event Loop ойлголттой танилц</h2>
+      <section>
+        <h3>Суралцсан</h3>
+        <p>callback funtion нь message queue -руу ороод ирдэг</p>
+        <p>
+          event loop нь javascript engine -ийн тусгай процесс бөгөөд байнга
+          message queue -г шалгаад сууж байдаг
+        </p>
+        <p>
+          Ямар нэг callback function message queue -руу орж ирсэн тохиолдолд
+          event loop нь execution stack хоосон эсэхийг шалгаад хоосон тохиолдолд
+          message queue доторх хамгийн эхний функцийг execution stack -руу
+          оруулж ажиллуулдаг
+        </p>
+        <p>
+          Execution stack доторх функцууд хамгийн өндөр эрхтэй бөгөөд ажиллаж
+          дууссан тохиолдолд л message queue -ээс функцуудыг дарааллуулж оруулж
+          ирж ажиллуулдаг
+        </p>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
