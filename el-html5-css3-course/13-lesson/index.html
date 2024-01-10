@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 12</title>
+  </head>
+  <body>
+    <h1>Lesson 12</h1>
+    <h2>Form болон Input</h2>
+    <form action="">
+      <!-- Text -->
+      <div>
+        <label for="name">Нэр</label><br />
+        <input type="text" name="name" id="name" placeholder="Таны нэр" />
+      </div>
+      <br />
+
+      <!-- Email -->
+      <div>
+        <label for="email">Имэйл</label><br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Таны имэйл хаяг" />
+      </div>
+      <br />
+
+      <!-- Comment -->
+      <div>
+        <label for="message">Санал сэтгэгдэл</label><br />
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+      </div>
+      <br />
+
+      <!-- Dropdown select -->
+      <div>
+        <label for="gender">Хүйс</label>
+        <select name="gender" id="gender">
+          <option value="male">Эрэгтэй</option>
+          <option value="female" selected>Эмэгтэй</option>
+        </select>
+      </div>
+      <br />
+
+      <!-- Number -->
+      <div>
+        <label for="age">Нас</label><br />
+        <input type="number" name="age" id="age" />
+      </div>
+      <br />
+
+      <!-- Date -->
+      <div>
+        <label for="birthdate">Төрсөн огноо</label><br />
+        <input type="date" name="birthdate" id="birthdate" />
+      </div>
+      <br />
+
+      <!-- Radio button -->
+      <div>
+        <label for="membership">Гишүүнчлэл</label><br />
+        <input
+          type="radio"
+          name="membership"
+          value="fremium"
+          id="membership"
+          checked />Free
+        <input
+          type="radio"
+          name="membership"
+          value="standard"
+          id="membership" />Standard
+        <input
+          type="radio"
+          name="membership"
+          value="premium"
+          id="membership" />VIP
+      </div>
+      <br />
+
+      <!-- Checkbox -->
+      <div>
+        <label for="hobbies">Сонирхдог зүйлс</label><br />
+        <input
+          type="checkbox"
+          name="hobbies"
+          value="music"
+          id="hobbies"
+          checked />Хөгжим
+        <input
+          type="checkbox"
+          name="hobbies"
+          value="sports"
+          id="hobbies" />Спорт
+        <input type="checkbox" name="hobbies" value="movies" id="hobbies" />Кино
+      </div>
+      <br />
+      <input type="submit" value="Бүртгүүлэх" />
+      <button type="submit">Илгээх</button>
+    </form>
+  </body>
+</html>
