@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 21</title>
+    <style>
+      /* html */
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        line-height: normal;
+      }
+
+      /* . бол Class -д зориулагдсан */
+      .primary-heading {
+        color: rgb(17, 43, 43);
+      }
+
+      /* # бол ID -д зориулагдсан */
+      #welcome {
+        background-color: aquamarine;
+      }
+
+      /* Multiple selector */
+      #about,
+      #welcome {
+        border: 1px solid gainsboro;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      /* Nested selector */
+      #welcome p {
+        font-size: 24px;
+      }
+
+      body p {
+        line-height: 160%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lesson 21</h1>
+    <h2>CSS-ийн үндсэн selector-ууд</h2>
+    <br />
+    <div id="welcome">
+      <h2 class="primary-heading">Тавтай морил</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, provident
+        quod accusantium, eos nulla iusto ipsum aliquid doloribus fugit debitis,
+        laboriosam necessitatibus dignissimos repudiandae minima fuga a soluta
+        quaerat pariatur.
+      </p>
+    </div>
+    <div id="about">
+      <h2>Бидний тухай</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+        veritatis perferendis id tempore quo, eligendi eum saepe et! Culpa
+        dolores, ipsam impedit quis aut corrupti.
+      </p>
+    </div>
+  </body>
+</html>
