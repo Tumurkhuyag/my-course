@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 34</title>
+    <style>
+      h3 {
+        /* display: none; */
+
+        /* visibility hidden */
+
+        /* Priority #1, #5 */
+        color: blue !important;
+      }
+
+      #hello {
+        /* Priority #2 */
+        color: blueviolet;
+
+        /* Padding дээр -30px ажиллахгүй */
+        /* Margin дээр -30px ажиллахгүй */
+      }
+
+      .hello {
+        /* Priority #3 */
+        color: red;
+      }
+
+      h3 {
+        /* Priority #4 */
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lesson 34</h1>
+    <h2>Visibility, Order болон хасах Margin</h2>
+
+    <h3 class="hello" id="hello">Сайн байна уу</h3>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia ipsum
+      aliquid repellendus, veniam tempore soluta non consequatur harum
+      asperiores, placeat molestias. Earum pariatur totam laborum a dicta, modi
+      dignissimos debitis.
+    </p>
+  </body>
+</html>
