@@ -1,0 +1,71 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Үндсэн стайлууд */
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.7em;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  padding-bottom: 20px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+/* Цэсний container */
+.container {
+  margin: auto;
+  max-width: 1024px;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+/* Цэсний стайлууд */
+#navbar {
+  background: #fafafc;
+  color: #333;
+  overflow: auto;
+}
+
+#navbar a {
+  color: #333;
+}
+
+#navbar h1 {
+  float: left;
+  padding-top: 20px;
+}
+
+#navbar ul {
+  list-style: none;
+  float: right;
+}
+
+#navbar ul li {
+  float: left;
+}
+
+#navbar ul li a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+#navbar ul li a:hover {
+  color: #000;
+}

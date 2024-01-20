@@ -1,4 +1,4 @@
-var lessonDone = 34;
+var lessonDone = 120;
 
 var str = "";
 
