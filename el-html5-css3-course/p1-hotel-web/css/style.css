@@ -35,6 +35,10 @@ p {
   padding: 0 20px;
 }
 
+.text-primary {
+  color: #fff;
+}
+
 /* Цэсний стайлууд */
 #navbar {
   background: #fafafc;
@@ -68,4 +72,22 @@ p {
 
 #navbar ul li a:hover {
   color: #000;
+}
+
+/* Showcase styles */
+#showcase {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../img/hero-image-1.jpg) no-repeat center center/cover;
+  height: 600px;
+}
+
+#showcase .showcase-content {
+  color: #efefef;
+  text-align: center;
+  padding: 200px 0;
+}
+
+#showcase .showcase-content h1 {
+  font-size: 64px;
+  line-height: 1.2em;
 }
