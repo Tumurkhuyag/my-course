@@ -42,8 +42,11 @@
   border: solid 1px #ddd;
 }
 
-.Ghost {
+.Ghost:hover {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .Link {
+  text-decoration: underline;
+  color: rgb(75, 136, 254);
 }
