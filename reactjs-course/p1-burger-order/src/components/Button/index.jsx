@@ -9,7 +9,7 @@ export const Button = (props) => {
       className={props.variant}
       type="button"
       onClick={clickHandler}
-      value={props.value}
+      value={props.value ? props.value : "Button"}
     />
   );
 };

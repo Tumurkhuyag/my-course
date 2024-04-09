@@ -35,3 +35,15 @@
     transform: rotate(360deg);
   }
 }
+
+.buttonList {
+  display: flex;
+  gap: 16px;
+}
+
+.divider {
+  height: 1px;
+  margin: 80px 0;
+  background-color: #eee;
+  width: 650px;
+}

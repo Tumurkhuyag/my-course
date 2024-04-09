@@ -20,7 +20,7 @@ export class Comment extends Component {
   render() {
     return (
       <div className="comment-container">
-        <div className="textView">
+        <div style={textView}>
           <div>{this.state.comment}</div>
         </div>
         <textarea
@@ -39,3 +39,16 @@ export class Comment extends Component {
     );
   }
 }
+
+const textView = {
+  height: "80px",
+  borderStyle: "none",
+  fontFamily: "Inter, sans-serif",
+  fontSize: "16px",
+  border: "1px solid #efefef",
+  borderRadius: "4px",
+  padding: "12px",
+  marginBottom: "16px",
+  width: "650px",
+  textAlign: "left",
+};

@@ -3,8 +3,7 @@
   text-align: right;
 }
 
-.textEditor,
-.textView {
+.textEditor {
   border-style: none;
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -14,13 +13,6 @@
   margin-bottom: 16px;
   width: 650px;
   text-align: left;
-}
-
-.textView {
-  height: 80px;
-}
-
-.textEditor {
   height: 20px;
   background-color: #f4f4f4;
   margin: 0;

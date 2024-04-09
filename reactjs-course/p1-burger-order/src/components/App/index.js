@@ -1,8 +1,9 @@
+import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./style.css";
 
-import { Button } from "./components/Button";
-import { Comment } from "./components/Comment";
+import { Button } from "../Button";
+import { Comment } from "../Comment";
 
 function App() {
   return (
@@ -15,14 +16,16 @@ function App() {
           <Comment by="Tom" />
         </div>
 
-        {/* <div>
-          <Button variant="Primary" />
+        <div className="divider"></div>
+
+        <div className="buttonList">
+          <Button variant="Primary" value="Button" />
           <Button variant="Secondary" />
           <Button variant="Destructive" />
           <Button variant="Outlined" />
           <Button variant="Ghost" />
           <Button variant="Link" />
-        </div> */}
+        </div>
       </header>
     </div>
   );
