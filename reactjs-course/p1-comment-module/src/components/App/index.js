@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "./logo.svg";
 import "./style.css";
 
@@ -9,6 +9,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Comment app</p>
+        <span>
+          React app хэрхэн render хийгддэг талаар туршилтууд хийж үзсэн
+        </span>
 
         <div>
           <Comment commentor="Tom" />

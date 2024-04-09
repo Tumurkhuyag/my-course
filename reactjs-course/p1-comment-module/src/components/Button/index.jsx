@@ -5,7 +5,7 @@ export const Button = (props) => {
   const [commentHistory, setCommentHistory] = useState([]);
   const [count, setCount] = useState(0);
 
-  const clickHandler = () => {
+  const clickHandler = (e) => {
     setCount(count + 1);
     setCommentHistory([...commentHistory, props.comment]);
   };
