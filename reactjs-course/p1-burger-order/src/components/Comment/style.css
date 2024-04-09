@@ -1,0 +1,39 @@
+.comment-container {
+  display: block;
+  text-align: right;
+}
+
+.textEditor,
+.textView {
+  border-style: none;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  padding: 12px 12px;
+  margin-bottom: 16px;
+  width: 650px;
+  text-align: left;
+}
+
+.textView {
+  height: 80px;
+}
+
+.textEditor {
+  height: 20px;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.commentor {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 16px;
+  margin-left: 4px;
+  color: #888;
+}
+.commentor-name {
+  font-weight: bold;
+}

@@ -10,23 +10,26 @@
   background: none;
   color: #222;
   border-radius: 4px;
-  margin: 0 10px;
   font-weight: 400;
 }
 
-.Primary:hover,
 .Secondary:hover,
-.Destructive:hover,
 .Outlined:hover,
 .Ghost:hover,
 .Link:hover {
-  opacity: 0.5;
+  background-color: color-mix(in srgb, currentColor 4%, transparent);
+  cursor: pointer;
+}
+
+.Destructive:hover,
+.Primary:hover {
+  opacity: 80%;
   cursor: pointer;
 }
 
 .Primary {
   background-color: #222;
-  color: #fff;
+  color: #efefef;
 }
 
 .Secondary {
@@ -43,10 +46,11 @@
 }
 
 .Ghost:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.Link {
+.Link:hover {
   text-decoration: underline;
   color: rgb(75, 136, 254);
+  opacity: 1;
 }
