@@ -26,7 +26,7 @@ export const Button = (props) => {
               <div style={profileImageStyle}></div>
               <div>
                 <div style={commentorStyle}>{props.commentor}</div>
-                <div style={commentText}>{el}</div>
+                <div>{el}</div>
               </div>
             </div>
           ))}
@@ -46,18 +46,13 @@ const viewComments = {
   fontSize: "16px",
   marginTop: "40px",
   textAlign: "left",
-  width: "650px",
-};
-
-const commentText = {
-  marginTop: "-12px",
+  width: "676px",
 };
 
 const commentorStyle = {
-  height: "40px",
   flex: "middle",
   fontWeight: "Bold",
-  paddingTop: "10px",
+  padding: "10px 0",
 };
 
 const profileImageStyle = {

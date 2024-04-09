@@ -8,14 +8,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>My Component Library</p>
+        <p>Comment app</p>
 
         <div>
           <Comment commentor="Tom" />
         </div>
-
-        <div className="divider"></div>
 
         {/* <div className="buttonList">
           <Button variant="Primary" value="Button" />
