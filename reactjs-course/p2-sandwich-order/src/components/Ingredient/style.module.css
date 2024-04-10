@@ -82,6 +82,14 @@
   width: 80%;
   height: 4%;
   margin: 1% auto;
-  background: linear-gradient(#bf3813, #c45e38);
+  background: linear-gradient(#bf4c13, #a15c3f);
+  border-radius: 4px;
+}
+
+.Tomato {
+  width: 80%;
+  height: 6%;
+  margin: 1% auto;
+  background: linear-gradient(#bf1313, #d66262);
   border-radius: 4px;
 }
