@@ -1,17 +1,18 @@
 import React from "react";
 import Ingredient from "../Ingredient";
+import Style from "./style.module.css";
 
 const Sandwitch = () => (
-  <div>
-    <Ingredient type="bread-top" />
-    <Ingredient type="salad" />
-    <Ingredient type="meat" />
-    <Ingredient type="cheese" />
-    <Ingredient type="bacon" />
-    <Ingredient type="cheese" />
-    <Ingredient type="salad" />
-    <Ingredient type="meat" />
-    <Ingredient type="bread-bottom" />
+  <div className={Style.Sandwitch}>
+    <Ingredient type="BreadTop" />
+    <Ingredient type="Salad" />
+    <Ingredient type="Meat" />
+    <Ingredient type="Cheese" />
+    <Ingredient type="Bacon" />
+    <Ingredient type="Cheese" />
+    <Ingredient type="Salad" />
+    <Ingredient type="Meat" />
+    <Ingredient type="BreadBottom" />
   </div>
 );
 
