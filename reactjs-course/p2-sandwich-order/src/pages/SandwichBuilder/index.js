@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import Sandwitch from "../../components/Sandwitch";
 import BuildControls from "../../components/BuildControls";
 
+const INGREDIENT_PRICES = {
+  salad: 2500,
+  cheese: 1500,
+  bacon: 1500,
+  meat: 2500,
+  tomato: 1500,
+};
+
 class SandwitchBuilder extends Component {
   state = {
     ingredients: {
@@ -11,6 +19,8 @@ class SandwitchBuilder extends Component {
       bacon: 0,
       tomato: 0,
     },
+
+    totalPrice: 2500,
   };
 
   addIngredient = (type) => {
@@ -18,7 +28,10 @@ class SandwitchBuilder extends Component {
 
     const newIngredients = { ...this.state.ingredients };
     newIngredients[type]++;
-    this.setState({ ingredients: newIngredients });
+
+    const newPrice = this.state.totalPrice + INGREDIENT_PRICES[type];
+
+    this.setState({ totalPrice: newPrice, ingredients: newIngredients });
   };
 
   removeIngredient = (type) => {
@@ -27,7 +40,9 @@ class SandwitchBuilder extends Component {
     const newIngredients = { ...this.state.ingredients };
     newIngredients[type]--;
 
-    this.setState({ ingredients: newIngredients });
+    const newPrice = this.state.totalPrice - INGREDIENT_PRICES[type];
+
+    this.setState({ totalPrice: newPrice, ingredients: newIngredients });
   };
 
   render() {
@@ -40,6 +55,7 @@ class SandwitchBuilder extends Component {
       <div>
         <Sandwitch ingredients={this.state.ingredients} />
         <BuildControls
+          price={this.state.totalPrice}
           addIngredient={this.addIngredient}
           removeIngredient={this.removeIngredient}
           count={this.state.ingredients}

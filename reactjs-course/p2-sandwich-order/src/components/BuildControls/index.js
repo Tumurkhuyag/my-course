@@ -4,6 +4,7 @@ import BuildControl from "../BuildControl";
 
 const BuildControls = (props) => (
   <div className={Style.BuildControls}>
+    <p>Сендвичний үнэ: {props.price}</p>
     <BuildControl
       addIngredient={props.addIngredient}
       removeIngredient={props.removeIngredient}
