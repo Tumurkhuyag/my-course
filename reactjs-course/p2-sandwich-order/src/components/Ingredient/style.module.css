@@ -41,15 +41,17 @@
   margin: auto;
   border-radius: 4px;
   position: relative;
+  margin-bottom: 1%;
 }
 
 .BreadBottom {
   width: 80%;
-  height: 15%;
+  height: 14%;
   background: linear-gradient(#ffbf50, #94421f);
   margin: auto;
   border-radius: 4px;
   position: relative;
+  margin-top: 1%;
 }
 
 .Salad {
@@ -63,7 +65,7 @@
 .Meat {
   width: 80%;
   height: 7%;
-  margin: 0.5% auto;
+  margin: 1% auto;
   background: linear-gradient(#712e18, #ab7151);
   border-radius: 4px;
 }

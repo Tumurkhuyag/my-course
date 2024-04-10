@@ -3,12 +3,16 @@
   height: 160px;
   margin: auto;
   text-align: center;
+  align-content: center;
   overflow: scroll;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 @media (min-width: 500px) and (min-height: 400px) {
   .Sandwitch {
     width: 520px;
     height: 280px;
+    font-size: 20px;
   }
 }
