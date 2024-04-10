@@ -10,7 +10,9 @@ const INGREDIENT_PRICES = {
   tomato: 1500,
 };
 
-class SandwitchBuilder extends Component {
+const initialPice = 2000;
+
+class SandwitchPage extends Component {
   state = {
     ingredients: {
       salad: 0,
@@ -20,7 +22,7 @@ class SandwitchBuilder extends Component {
       tomato: 0,
     },
 
-    totalPrice: 2500,
+    totalPrice: initialPice,
   };
 
   addIngredient = (type) => {
@@ -56,6 +58,7 @@ class SandwitchBuilder extends Component {
         <Sandwitch ingredients={this.state.ingredients} />
         <BuildControls
           price={this.state.totalPrice}
+          initialPrice={initialPice}
           addIngredient={this.addIngredient}
           removeIngredient={this.removeIngredient}
           count={this.state.ingredients}
@@ -65,4 +68,4 @@ class SandwitchBuilder extends Component {
   }
 }
 
-export default SandwitchBuilder;
+export default SandwitchPage;
