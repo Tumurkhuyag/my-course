@@ -18,7 +18,6 @@ class SandwitchBuilder extends Component {
 
     const newIngredients = { ...this.state.ingredients };
     newIngredients[type]++;
-    const count = newIngredients[type];
     this.setState({ ingredients: newIngredients });
   };
 
