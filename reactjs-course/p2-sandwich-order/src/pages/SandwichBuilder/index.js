@@ -18,7 +18,7 @@ class SandwitchBuilder extends Component {
 
     const newIngredients = { ...this.state.ingredients };
     newIngredients[type]++;
-
+    const count = newIngredients[type];
     this.setState({ ingredients: newIngredients });
   };
 
@@ -32,12 +32,18 @@ class SandwitchBuilder extends Component {
   };
 
   render() {
+    const disabledIngredients = { ...this.state.ingredients };
+
+    for (let key in disabledIngredients) {
+      disabledIngredients[key] = disabledIngredients[key] <= 0;
+    }
     return (
       <div>
         <Sandwitch ingredients={this.state.ingredients} />
         <BuildControls
           addIngredient={this.addIngredient}
           removeIngredient={this.removeIngredient}
+          count={this.state.ingredients}
         />
       </div>
     );

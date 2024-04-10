@@ -7,30 +7,35 @@ const BuildControls = (props) => (
     <BuildControl
       addIngredient={props.addIngredient}
       removeIngredient={props.removeIngredient}
+      count={props.count}
       type="salad"
       ingredient="Салад"
     />
     <BuildControl
       addIngredient={props.addIngredient}
       removeIngredient={props.removeIngredient}
+      count={props.count}
       type="bacon"
       ingredient="Гахайн мах"
     />
     <BuildControl
       addIngredient={props.addIngredient}
       removeIngredient={props.removeIngredient}
+      count={props.count}
       type="cheese"
       ingredient="Бяслаг"
     />
     <BuildControl
       addIngredient={props.addIngredient}
       removeIngredient={props.removeIngredient}
+      count={props.count}
       type="meat"
       ingredient="Үхрийн мах"
     />
     <BuildControl
       addIngredient={props.addIngredient}
       removeIngredient={props.removeIngredient}
+      count={props.count}
       type="tomato"
       ingredient="Улаан лооль"
     />

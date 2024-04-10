@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px 0;
+  margin: 8px 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -20,21 +20,25 @@
 }
 
 .BuildControl button:disabled {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #ccc;
+  background-color: #e4e4e4;
+  color: #999;
   cursor: default;
 }
 
 .BuildControl button:hover:disabled {
-  color: #ccc;
+  color: #999;
+  background-color: #e4e4e4;
   cursor: not-allowed;
 }
 
 .Label {
-  padding: 10px;
+  background-color: #f4f4f4;
+  height: 32px;
+  align-content: center;
   font-weight: bold;
-  width: 100px;
-  text-align: right;
+  width: 160px;
+  text-align: center;
+  margin: 0 5px;
 }
 
 .BuildControl .Less {
