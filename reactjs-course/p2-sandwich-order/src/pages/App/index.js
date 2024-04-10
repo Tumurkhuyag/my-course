@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import Style from "./style.module.css";
 
 import Toolbar from "../../components/Toolbar";
 import SandwitchBuilder from "../SandwichBuilder";
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <Toolbar />
-      <main className="Content">
+      <main className={Style.Content}>
         <SandwitchBuilder />
       </main>
     </div>
