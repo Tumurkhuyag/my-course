@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Sandwitch from "../../components/Sandwitch";
 import BuildControls from "../../components/BuildControls";
+import Modal from "../../components/General/Modal";
 
 const INGREDIENT_PRICES = {
   salad: 2500,
@@ -55,6 +56,10 @@ class SandwitchPage extends Component {
     }
     return (
       <div>
+        <Modal>
+          <h1>Та итгэлтэй байна уу?</h1>
+          <p>Захиалгын дэлгэрэнгүй</p>
+        </Modal>
         <Sandwitch ingredients={this.state.ingredients} />
         <BuildControls
           price={this.state.totalPrice}
