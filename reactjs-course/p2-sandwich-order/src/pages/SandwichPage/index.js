@@ -37,6 +37,10 @@ class SandwitchPage extends Component {
     totalPrice: initialPice,
   };
 
+  continueOrder = () => {
+    console.log("Үргэлжлүүх товч дарагдлаа");
+  };
+
   showConfirmModal = () => {
     this.setState({ confirmOrder: true });
   };
@@ -46,8 +50,6 @@ class SandwitchPage extends Component {
   };
 
   addIngredient = (type) => {
-    console.log("====> " + type);
-
     const newIngredients = { ...this.state.ingredients };
     newIngredients[type]++;
 
@@ -79,6 +81,8 @@ class SandwitchPage extends Component {
           closeConfirmModal={this.closeConfirmModal}
           show={this.state.confirmOrder}>
           <OrderSummary
+            onCancel={this.closeConfirmModal}
+            onContinue={this.continueOrder}
             price={this.state.totalPrice}
             ingredientNames={INGREDIENT_NAMES}
             ingredients={this.state.ingredients}

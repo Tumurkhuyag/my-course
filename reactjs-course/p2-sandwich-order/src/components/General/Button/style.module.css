@@ -1,0 +1,60 @@
+.Primary,
+.Secondary,
+.Destructive,
+.Outlined,
+.Ghost,
+.Link {
+  border-style: none;
+  height: 40px;
+  padding: 0 24px;
+  background: none;
+  color: #222;
+  border-radius: 4px;
+  font-weight: 400;
+  align-content: center;
+  width: fit-content;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.Secondary:hover,
+.Outlined:hover,
+.Ghost:hover,
+.Link:hover {
+  background-color: color-mix(in srgb, currentColor 4%, transparent);
+  cursor: pointer;
+}
+
+.Destructive:hover,
+.Primary:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+.Primary {
+  background-color: #222;
+  color: #efefef;
+}
+
+.Secondary {
+  background-color: #efefef;
+}
+
+.Destructive {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.Outlined {
+  border: solid 1px #ddd;
+}
+
+.Ghost:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.Link:hover {
+  text-decoration: underline;
+  color: rgb(75, 136, 254);
+  opacity: 1;
+}

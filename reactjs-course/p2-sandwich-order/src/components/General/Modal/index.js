@@ -13,7 +13,6 @@ const Modal = (props) => {
           zIndex: props.show ? "500" : "-100",
         }}
         className={Style.Modal}>
-        {console.log(props.show)}
         {props.children}
       </div>
     </div>
