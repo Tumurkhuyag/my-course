@@ -32,7 +32,17 @@ class SandwitchPage extends Component {
       tomato: 0,
     },
 
+    confirmOrder: false,
+
     totalPrice: initialPice,
+  };
+
+  showConfirmModal = () => {
+    this.setState({ confirmOrder: true });
+  };
+
+  closeConfirmModal = () => {
+    this.setState({ confirmOrder: false });
   };
 
   addIngredient = (type) => {
@@ -65,7 +75,9 @@ class SandwitchPage extends Component {
     }
     return (
       <div>
-        <Modal>
+        <Modal
+          closeConfirmModal={this.closeConfirmModal}
+          show={this.state.confirmOrder}>
           <OrderSummary
             ingredientNames={INGREDIENT_NAMES}
             ingredients={this.state.ingredients}
@@ -73,6 +85,7 @@ class SandwitchPage extends Component {
         </Modal>
         <Sandwitch ingredients={this.state.ingredients} />
         <BuildControls
+          showConfirmModal={this.showConfirmModal}
           ingredientNames={INGREDIENT_NAMES}
           price={this.state.totalPrice}
           initialPrice={initialPice}

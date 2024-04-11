@@ -21,6 +21,7 @@ const BuildControls = (props) => {
       ))}
 
       <button
+        onClick={props.showConfirmModal}
         disabled={props.price <= props.initialPrice}
         className={Style.OrderButton}>
         Захиалах
