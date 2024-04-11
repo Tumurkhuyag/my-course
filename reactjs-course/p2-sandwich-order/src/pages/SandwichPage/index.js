@@ -79,6 +79,7 @@ class SandwitchPage extends Component {
           closeConfirmModal={this.closeConfirmModal}
           show={this.state.confirmOrder}>
           <OrderSummary
+            price={this.state.totalPrice}
             ingredientNames={INGREDIENT_NAMES}
             ingredients={this.state.ingredients}
           />
