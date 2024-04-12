@@ -4,10 +4,11 @@ import Menu from "../Menu";
 import Shadow from "../General/Shadow";
 
 const SideBar = (props) => {
+  let classes = [Style.SideBar, Style.Close];
   return (
     <div>
       <Shadow show={props.showSidebar} />
-      <div className={Style.SideBar}>
+      <div className={classes.join(" ")}>
         <Menu />
       </div>
     </div>
