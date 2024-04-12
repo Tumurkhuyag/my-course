@@ -5,10 +5,12 @@ import Menu from "../Menu";
 
 const Toolbar = () => (
   <header className={Style.Toolbar}>
-    <div>...</div>
     <Logo />
-    <nav>
+    <nav className={Style.HideOnMobile}>
       <Menu />
+    </nav>
+    <nav className={Style.HideOnDesktop}>
+      <div>...</div>
     </nav>
   </header>
 );

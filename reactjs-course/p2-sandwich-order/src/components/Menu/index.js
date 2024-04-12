@@ -7,9 +7,9 @@ const Menu = () => {
     <div>
       <ul className={Style.Menu}>
         <MenuItem active link="/">
-          Сендвич
+          Захиалга
         </MenuItem>
-        <MenuItem link="/checkout">Төлбөр</MenuItem>
+        <MenuItem link="/login">Нэвтрэх</MenuItem>
       </ul>
     </div>
   );

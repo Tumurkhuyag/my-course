@@ -1,18 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
 import Style from "./style.module.css";
 
 import Toolbar from "../../components/Toolbar";
-import SandwitchPage from "../SandwichPage";
+import SandwichPage from "../SandwichPage";
+import SideBar from "../../components/SideBar";
 
-function App() {
-  return (
-    <div>
-      <Toolbar />
-      <main className={Style.Content}>
-        <SandwitchPage />
-      </main>
-    </div>
-  );
+class App extends Component {
+  state = {
+    showSidebar: false,
+  };
+
+  toggleSidebar = () => {
+    this.setState((prevState) => {
+      return { showSidebar: !prevState.showSidebar };
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Toolbar toggleSidebar={this.toggleSidebar} />
+        <SideBar
+          showSidebar={this.state.showSidebar}
+          toggleSidebar={this.toggleSidebar}
+        />
+        <main className={Style.Content}>
+          <SandwichPage />
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;

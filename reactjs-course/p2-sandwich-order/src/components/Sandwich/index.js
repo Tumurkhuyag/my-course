@@ -2,7 +2,7 @@ import React from "react";
 import Ingredient from "../Ingredient";
 import Style from "./style.module.css";
 
-const Sandwitch = (props) => {
+const Sandwich = (props) => {
   let content = [];
   // {"salad": 2, "cheese": 2, "meat": 2, "bacon": 1}
   const items = Object.entries(props.ingredients);
@@ -23,4 +23,4 @@ const Sandwitch = (props) => {
   );
 };
 
-export default Sandwitch;
+export default Sandwich;

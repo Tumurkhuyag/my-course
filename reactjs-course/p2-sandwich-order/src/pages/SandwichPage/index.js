@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Sandwitch from "../../components/Sandwitch";
+import Sandwich from "../../components/Sandwich";
 import BuildControls from "../../components/BuildControls";
 import Modal from "../../components/General/Modal";
 import OrderSummary from "../../components/OrderSummary";
@@ -22,7 +22,7 @@ const INGREDIENT_NAMES = {
 
 const initialPice = 2000;
 
-class SandwitchPage extends Component {
+class SandwichPage extends Component {
   state = {
     ingredients: {
       salad: 0,
@@ -88,7 +88,7 @@ class SandwitchPage extends Component {
             ingredients={this.state.ingredients}
           />
         </Modal>
-        <Sandwitch ingredients={this.state.ingredients} />
+        <Sandwich ingredients={this.state.ingredients} />
         <BuildControls
           showConfirmModal={this.showConfirmModal}
           ingredientNames={INGREDIENT_NAMES}
@@ -103,4 +103,4 @@ class SandwitchPage extends Component {
   }
 }
 
-export default SandwitchPage;
+export default SandwichPage;

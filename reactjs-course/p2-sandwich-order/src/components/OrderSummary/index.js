@@ -7,7 +7,7 @@ const OrderSummary = (props) => {
     <div>
       <h3>Таны захиалга</h3>
       <p>Cонгосон орцууд</p>
-      <ul>
+      <ul className={Style.List}>
         {Object.keys(props.ingredients).map((el) => (
           <li key={el}>
             <div>{props.ingredientNames[el]} :</div>

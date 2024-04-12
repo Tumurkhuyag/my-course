@@ -1,9 +1,16 @@
 .Menu {
   list-style: none;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   margin: 0;
   padding: 0;
   height: 100%;
   align-items: center;
+}
+
+@media (min-width: 500px) {
+  .Menu {
+    box-sizing: border-box;
+    flex-flow: row;
+  }
 }
