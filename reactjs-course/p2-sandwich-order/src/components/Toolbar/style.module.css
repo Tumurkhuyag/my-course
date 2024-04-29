@@ -17,6 +17,11 @@
   font-size: 17px;
 }
 
+.Toolbar nav {
+  height: 100%;
+  align-content: center;
+}
+
 @media (max-width: 500px) {
   .HideOnMobile {
     display: none;

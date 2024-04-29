@@ -5,9 +5,14 @@ import Shadow from "../General/Shadow";
 
 const SideBar = (props) => {
   let classes = [Style.SideBar, Style.Close];
+
+  if (props.showSidebar) {
+    classes = [Style.SideBar, Style.Open];
+  }
+
   return (
     <div>
-      <Shadow show={props.showSidebar} />
+      <Shadow onClick={props.toggleSidebar} show={props.showSidebar} />
       <div className={classes.join(" ")}>
         <Menu />
       </div>
