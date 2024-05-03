@@ -3,6 +3,7 @@ import Sandwich from "../../components/Sandwich";
 import BuildControls from "../../components/BuildControls";
 import Modal from "../../components/General/Modal";
 import OrderSummary from "../../components/OrderSummary";
+import axios from "../../axios-orders";
 
 const INGREDIENT_PRICES = {
   salad: 2500,
@@ -38,7 +39,19 @@ class SandwichPage extends Component {
   };
 
   continueOrder = () => {
-    console.log("Үргэлжлүүх товч дарагдлаа");
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.totalPrice,
+      deliveryAddress: {
+        name: "Tom",
+        city: "Ulaanbaatar",
+        district: "Bayangol",
+      },
+    };
+
+    axios.post("/orders.json", order).then((response) => {
+      alert("Амжилттай хадгаллаа");
+    });
   };
 
   showConfirmModal = () => {
