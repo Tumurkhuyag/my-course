@@ -24,6 +24,7 @@ class App extends Component {
           showSidebar={this.state.showSidebar}
           toggleSidebar={this.toggleSidebar}
         />
+
         <main className={Style.Content}>
           <SandwichPage />
         </main>

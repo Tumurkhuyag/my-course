@@ -36,6 +36,25 @@ class SandwichPage extends Component {
     confirmOrder: false,
 
     totalPrice: initialPice,
+
+    lastCustomerName: "N/A",
+  };
+
+  componentDidMount = () => {
+    axios.get("/orders.json").then((response) => {
+      let arr = Object.entries(response.data);
+      arr = arr.reverse();
+      arr.forEach((el) =>
+        console.log(el[1].deliveryAddress.name + " ===> " + el[1].price)
+      );
+      const lastOrder = arr[0][1];
+
+      this.setState({
+        ingredients: lastOrder.ingredients,
+        totalPrice: lastOrder.price,
+        lastCustomerName: lastOrder.deliveryAddress.name,
+      });
+    });
   };
 
   continueOrder = () => {
@@ -43,7 +62,7 @@ class SandwichPage extends Component {
       ingredients: this.state.ingredients,
       price: this.state.totalPrice,
       deliveryAddress: {
-        name: "Tom",
+        name: "Nasaa",
         city: "Ulaanbaatar",
         district: "Bayangol",
       },
@@ -72,8 +91,6 @@ class SandwichPage extends Component {
   };
 
   removeIngredient = (type) => {
-    console.log("====> " + type);
-
     const newIngredients = { ...this.state.ingredients };
     newIngredients[type]--;
 
@@ -102,6 +119,15 @@ class SandwichPage extends Component {
           />
         </Modal>
         <Sandwich ingredients={this.state.ingredients} />
+        <p
+          style={{
+            margin: "0",
+            marginBottom: "10px",
+            with: "100%",
+            textAlign: "center",
+          }}>
+          Сүүлийн захиалагч: {this.state.lastCustomerName}
+        </p>
         <BuildControls
           showConfirmModal={this.showConfirmModal}
           ingredientNames={INGREDIENT_NAMES}
