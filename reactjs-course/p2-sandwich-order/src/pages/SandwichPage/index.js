@@ -4,6 +4,7 @@ import BuildControls from "../../components/BuildControls";
 import Modal from "../../components/General/Modal";
 import OrderSummary from "../../components/OrderSummary";
 import axios from "../../axios-orders";
+import Spinner from "../../components/General/Spinner";
 
 const INGREDIENT_PRICES = {
   salad: 2500,
@@ -38,23 +39,30 @@ class SandwichPage extends Component {
     totalPrice: initialPice,
 
     lastCustomerName: "N/A",
+
+    loading: false,
   };
 
   componentDidMount = () => {
-    axios.get("/orders.json").then((response) => {
-      let arr = Object.entries(response.data);
-      arr = arr.reverse();
-      arr.forEach((el) =>
-        console.log(el[1].deliveryAddress.name + " ===> " + el[1].price)
-      );
-      const lastOrder = arr[0][1];
+    this.setState({ loading: true });
+    axios
+      .get("/orders.json")
+      .then((response) => {
+        let arr = Object.entries(response.data);
+        arr = arr.reverse();
+        arr.forEach((el) =>
+          console.log(el[1].deliveryAddress.name + " ===> " + el[1].price)
+        );
+        const lastOrder = arr[0][1];
 
-      this.setState({
-        ingredients: lastOrder.ingredients,
-        totalPrice: lastOrder.price,
-        lastCustomerName: lastOrder.deliveryAddress.name,
-      });
-    });
+        this.setState({
+          ingredients: lastOrder.ingredients,
+          totalPrice: lastOrder.price,
+          lastCustomerName: lastOrder.deliveryAddress.name,
+        });
+      })
+      .catch((err) => console.log(err))
+      .finally(this.setState({ loading: false }));
   };
 
   continueOrder = () => {
@@ -62,15 +70,18 @@ class SandwichPage extends Component {
       ingredients: this.state.ingredients,
       price: this.state.totalPrice,
       deliveryAddress: {
-        name: "Nasaa",
+        name: "Amgaa",
         city: "Ulaanbaatar",
-        district: "Bayangol",
+        district: "Chingeltei",
       },
     };
-
-    axios.post("/orders.json", order).then((response) => {
-      alert("Амжилттай хадгаллаа");
-    });
+    this.setState({ loading: true });
+    axios
+      .post("/orders.json", order)
+      .then((response) => {})
+      .finally(() => {
+        this.setState({ loading: false });
+      });
   };
 
   showConfirmModal = () => {
@@ -110,14 +121,19 @@ class SandwichPage extends Component {
         <Modal
           closeConfirmModal={this.closeConfirmModal}
           show={this.state.confirmOrder}>
-          <OrderSummary
-            onCancel={this.closeConfirmModal}
-            onContinue={this.continueOrder}
-            price={this.state.totalPrice}
-            ingredientNames={INGREDIENT_NAMES}
-            ingredients={this.state.ingredients}
-          />
+          {this.state.loading ? (
+            <Spinner />
+          ) : (
+            <OrderSummary
+              onCancel={this.closeConfirmModal}
+              onContinue={this.continueOrder}
+              price={this.state.totalPrice}
+              ingredientNames={INGREDIENT_NAMES}
+              ingredients={this.state.ingredients}
+            />
+          )}
         </Modal>
+
         <Sandwich ingredients={this.state.ingredients} />
         <p
           style={{
