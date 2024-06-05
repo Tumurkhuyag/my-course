@@ -18,7 +18,7 @@ const INGREDIENT_NAMES = {
   meat: "Үхрийн мах",
   cheese: "Бяслаг",
   salad: "Салад",
-  bacon: "Гахайн мах",
+  bacon: "Шарсан гахайн мах",
   tomato: "Улаан лооль",
 };
 
