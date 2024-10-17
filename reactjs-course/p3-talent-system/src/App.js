@@ -1,5 +1,7 @@
 import "./App.css";
 import { Checkbox } from "./components/ui/checkbox";
+import { Badge } from "./components/ui/badge";
+import { Progress } from "./components/ui/progress";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";
@@ -10,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./components/ui/select";
-import { ArrowRight, RefreshCw } from "lucide-react";
+import { UserCheck, Linkedin, Chrome, Google } from "lucide-react";
 import { Separator } from "./components/ui/separator";
 
 function App() {
@@ -27,16 +29,31 @@ function App() {
           </h1>
         </div>
 
+        <div className="flex items-center gap-4">
+          <Badge className="bg-red-100 text-red-500">1/3</Badge>
+          <Progress value={0.3} className="w-full h-1" />
+          <Button size="icon" className="size-8 rounded-full w-11">
+            <UserCheck className="h-4 w-4" />
+          </Button>
+        </div>
+
         <div className="grid grid-cols-2 gap-4">
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full gap-2">
+            <Chrome className="h-4 w-4" />
             Google
           </Button>
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full gap-2">
+            <Linkedin className="h-4 w-4" />
             LinkedIn
           </Button>
         </div>
 
-        <Separator />
+        <div>
+          <div className="bg-white w-11 absolute m-auto left-0 right-0">
+            <div className="text-gray-400 text-sm text-center">or</div>
+          </div>
+          <Separator className="inline-block align-middle" />
+        </div>
 
         <div className="space-y-4">
           <div className="space-y-2">
@@ -69,11 +86,11 @@ function App() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
           <Checkbox id="terms" />
           <label
             htmlFor="terms"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            className="text-sm font-normal leading-5 peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             I agree with the Terms and Conditions and the Privacy and Policy
           </label>
         </div>
