@@ -78,10 +78,7 @@ function App() {
           </label>
         </div>
 
-        <Button className="w-full">
-          Save and continue
-          <ArrowRight className="w-4 h-4 ml-2" />
-        </Button>
+        <Button className="w-full">Save and continue</Button>
 
         <p className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
